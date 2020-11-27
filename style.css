@@ -44,21 +44,20 @@ body {
   justify-content: space-around;
   width: 50%;
 }
-button{
+button.a{
   padding: 10px 20px;
   width: 100px;
   height: 60px;
-  margin-bottom: 20px;
   margin: 20px;
+  margin-right: 20px; 
   font-size: 26px;
   font-weight: bold;
   font-family: cursive;
-  background: black;
+  background: #fa6e02;
   border: solid black;
   border-radius: 6px;
   cursor: pointer;
   justify-items: center;
-  color: white;
 }
 h2 {
   font-family: var(--fredoka);
@@ -69,7 +68,4 @@ h2 {
 .logo-image {
   height: 12px;
   width: 46px;
-}
-a {
-  color: white;
 }
