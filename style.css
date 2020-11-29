@@ -36,6 +36,14 @@ body {
   background: var(--pale-yellow);
   overflow-x: hidden;
 }
+section.nav {
+  background-image: url(images/alcohol-bar-bartender-beer-wallpaper-preview.jpg);
+  height: 90vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;  
+}
 
 .main-nav-links{
   float: right;
@@ -53,8 +61,9 @@ body {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 8px;
   cursor: pointer;
+  border-radius: 11px; 
 }
 h2 {
   font-family: var(--fredoka);
