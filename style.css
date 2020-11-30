@@ -36,6 +36,7 @@ body {
   background: var(--pale-yellow);
   overflow-x: hidden;
 }
+/* HEADER */
 section.nav {
   background-image: url(images/image2.jpg);
   height: 95vh;
@@ -58,6 +59,7 @@ section.nav {
   justify-content: space-between;
   width: 60%;
   padding-top: 2px;
+  position: sticky;
 }
 .button {
   background-color: rgb(248, 19, 76);
@@ -106,6 +108,7 @@ h2 {
     box-shadow: rgba(0, 0, 0, 0.3) 0 2rem 4rem;
     transition: all 0.2s ease-out 0s;
     margin-right: 10px;
+    margin: 20px 20px;
 }
 
 .img-fluid:hover {
@@ -138,4 +141,41 @@ h1 {
   margin-top: 2rem;
 }
 
+.hero .order-now {
+  padding: 8px 22px;
+  border-radius: 25px;
+  background: var(--pink);
+  text-decoration: none;
+  color: var(--pale-yellow);
+  font-size: 2rem;
+  font-family: var(--poppins);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
 
+.hero .order-now:hover {
+  background: orange;
+}
+
+/* PRODUCT LIST */
+.products {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.products li {
+  list-style-type: none;
+  padding: 0;
+  flex: 0 1 34rem;
+  margin: 0.5rem;
+  height: 35rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
