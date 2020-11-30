@@ -37,23 +37,31 @@ body {
   overflow-x: hidden;
 }
 section.nav {
-  background-image: url(images/alcohol-bar-bartender-beer-wallpaper-preview.jpg);
-  height: 90vh;
+  background-image: url(images/pexels-photo-1283219.jpeg);
+  height: 95vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;  
+}
+.navbar-brand {
+  height: 25px;
+  text-align: left;
+  padding: 8px;
+  position: relative;
 }
 
 .main-nav-links{
   float: right;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 50%;
+  justify-content: space-between;
+  width: 60%;
+  padding-top: 2px;
 }
 .button {
   background-color: rgb(248, 19, 76);
+  align-items: center;
   border: none;
   color: white;
   padding: 15px 32px;
@@ -62,8 +70,14 @@ section.nav {
   display: inline-block;
   font-size: 16px;
   margin: 4px 8px;
-  cursor: pointer;
+  cursor: hover;
   border-radius: 11px; 
+}
+.button:hover {
+  box-shadow: rgba(241, 97, 97, 0.3)0 0.5rem 2rem;
+  background-color: rgb(12, 0, 0);
+  border-radius: 11px;
+    
 }
 h2 {
   font-family: var(--fredoka);
@@ -72,6 +86,30 @@ h2 {
 }
 
 .logo-image {
-  height: 12px;
-  width: 46px;
+    margin-left: 5px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+  
+.img-fluid {
+    border: solid white;
+    border-radius: 8px;
+    width: 105px;
+    height: 105px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    display: block;
+    transform: rotate(-20deg);
+    transform-origin: left bottom;
+    box-shadow: rgba(0, 0, 0, 0.3) 0 2rem 4rem;
+    transition: all 0.2s ease-out 0s;
+    margin-right: 10px;
+}
+
+.img-fluid:hover {
+  transform: rotate(0deg);
+  box-shadow: rgba(0, 0, 0, 0.3)0 0.5rem 2rem;
+  z-index: 10;
 }
