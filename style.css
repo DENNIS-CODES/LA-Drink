@@ -37,7 +37,7 @@ body {
   overflow-x: hidden;
 }
 section.nav {
-  background-image: url(images/pexels-photo-1283219.jpeg);
+  background-image: url(images/image2.jpg);
   height: 95vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -53,7 +53,7 @@ section.nav {
 
 .main-nav-links{
   float: right;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: space-between;
   width: 60%;
@@ -75,7 +75,7 @@ section.nav {
 }
 .button:hover {
   box-shadow: rgba(241, 97, 97, 0.3)0 0.5rem 2rem;
-  background-color: rgb(12, 0, 0);
+  background-color: orange;
   border-radius: 11px;
     
 }
@@ -113,3 +113,4 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.3)0 0.5rem 2rem;
   z-index: 10;
 }
+
