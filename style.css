@@ -147,10 +147,11 @@ h1 {
 .hero .order-now {
   padding: 8px 22px;
   border-radius: 25px;
-  background: var(--pink);
+  background: rgb(248, 19, 76);
   text-decoration: none;
   color: var(--pale-yellow);
   font-size: 2rem;
+  font-weight: bolder;
   font-family: var(--poppins);
   transition: 0.3s ease;
   cursor: pointer;
