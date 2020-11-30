@@ -179,3 +179,30 @@ h1 {
   justify-content: space-between;
   height: 100%;
 }
+.product-image {
+  height: 240px;
+  width: 240px;
+}
+.product-name {
+  font-weight: bold;
+  font-size: 2rem;
+  padding-top: 10px;  
+}
+.product-brand {
+  font-size: 1.5rem;
+  font-weight: bold; 
+
+}
+.product-price {
+  font-size: 2rem;
+  font-weight: bold;
+}
+.product-name a{
+  color: red;
+}
+.product-name a:hover{
+color: orange;
+}
+.product-rating {
+  margin-bottom: 1rem;
+}
