@@ -126,6 +126,7 @@ h2 {
 h1 {
   background: linear-gradient(to right, var(--pink) 0%, var(--orange) 100%);
   font-size: 23px;
+  font-weight: bolder;
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -135,6 +136,8 @@ h1 {
   color: var(--orange);
   letter-spacing: 2px;
   font-size: 23px;
+  text-align: center;
+  font-weight: bold;
 }
 .hero .btn-container {
   text-align: center;
@@ -205,4 +208,23 @@ color: orange;
 }
 .product-rating {
   margin-bottom: 1rem;
+}
+
+/* FOOTER */
+footer {
+  background-color: rgb(2, 0, 0);
+}
+
+.list-unstyled a {
+  color: red;
+}
+.list-unstyled a:hover {
+color: orange;
+}
+
+.list-inline-item a{
+  color: white;
+}
+.list-inline-item {
+  color: white;
 }
