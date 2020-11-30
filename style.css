@@ -113,4 +113,18 @@ h2 {
   box-shadow: rgba(0, 0, 0, 0.3)0 0.5rem 2rem;
   z-index: 10;
 }
+.hero {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+h1 {
+  background: linear-gradient(to right, var(--pink) 0%, var(--orange) 100%);
+  font-size: 23px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 
