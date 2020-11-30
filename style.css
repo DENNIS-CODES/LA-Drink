@@ -128,3 +128,14 @@ h1 {
   -webkit-text-fill-color: transparent;
 }
 
+.hero p {
+  color: var(--orange);
+  letter-spacing: 2px;
+  font-size: 23px;
+}
+.hero .btn-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
