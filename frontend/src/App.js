@@ -6,7 +6,7 @@ function App() {
     <header classNameName="header">
       <section className="nav">
 			<div className="logo-image">
-				<a className="navbar-brand" href="/"><img src= {require (."./images/logo.png")} alt="logo" className="img-fluid"/></a>
+				<a className="navbar-brand" href="/"><img src= {require ("./images/logo.png")} alt="logo" className="img-fluid"/></a>
   <ul className="main-nav-links">
     <li><a href="#!" className="button">Shop</a></li>
     <li><a href="#!" className="button">Vodka</a></li>
