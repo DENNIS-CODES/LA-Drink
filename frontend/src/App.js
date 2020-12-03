@@ -6,7 +6,7 @@ function App() {
     <header classNameName="header">
       <section className="nav">
 			<div className="logo-image">
-				<a className="navbar-brand" href="/"><img src={require ("./images/logo.png")} alt="logo" className="img-fluid"/></a>
+				<a className="navbar-brand" href="/"><img src= {require (."./images/logo.png")} alt="logo" className="img-fluid"/></a>
   <ul className="main-nav-links">
     <li><a href="#!" className="button">Shop</a></li>
     <li><a href="#!" className="button">Vodka</a></li>
@@ -37,7 +37,7 @@ function App() {
       <ul className="products">
         <li>
           <div className="product">
-            <img src={require("/images/4th-Street-Red.jpeg")} className="product-image"/>
+            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -46,7 +46,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src={require("/images/4th-Street-Red.jpeg")} className="product-image" alt="products-img"/>
+            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="products-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -55,7 +55,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src={require("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -64,7 +64,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src={require("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -73,7 +73,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src={require("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -82,7 +82,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src={require("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
