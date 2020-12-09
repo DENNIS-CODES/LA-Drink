@@ -1,12 +1,13 @@
 import './App.css';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+
 function App() {
   return (
-  <div classNameName="App">
-    <header classNameName="header">
+  <div className="App">
+    <header className="header">
       <section className="nav">
 			<div className="logo-image">
-				<a className="navbar-brand" href="/"><img src= {require ("./images/logo.png")} alt="logo" className="img-fluid"/></a>
+				<a className="navbar-brand" href="/"><img src= {require ("/images/logo.png")} alt="logo" className="img-fluid"/></a>
   <ul className="main-nav-links">
     <li><a href="#!" className="button">Shop</a></li>
     <li><a href="#!" className="button">Vodka</a></li>
@@ -24,7 +25,7 @@ function App() {
     <h1>⭐Oder your favorite liqour because!⁂</h1>
     <p>※Sober is Boring!🍻</p>
     <div className="btn-container">
-      <a data-tab-target="#!menu" className="order-now">Order Now</a>
+      <a href="#!menu" className="order-now">Order Now</a>
     </div>
     
   </div>
@@ -37,7 +38,7 @@ function App() {
       <ul className="products">
         <li>
           <div className="product">
-            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image"/>
+            <img  className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="wine"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -46,7 +47,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="products-img"/>
+            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="products-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -55,7 +56,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -64,7 +65,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -73,7 +74,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -82,7 +83,7 @@ function App() {
             </li>
             <li>
           <div className="product">
-            <img src= {require("./images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <img  className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
             <div className="product-brand">Wine</div>
             <div className="product-price">Ksh999</div>
@@ -176,7 +177,7 @@ function App() {
             <h5 className="mb-1">Register for free</h5>
           </li>
           <li className="list-inline-item">
-            <a href="#!" className="btn btn-danger btn-rounded">
+            <a href="#signUp" className="btn btn-danger btn-rounded">
               Sign up!
             </a>
           </li>
