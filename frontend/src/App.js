@@ -1,5 +1,5 @@
 import './App.css';
-import {Browserrouter, Route} from 'react-router-dom'
+import {Browserrouter, Route} from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
 import ProductScreen from './screen/ProductScreen';
