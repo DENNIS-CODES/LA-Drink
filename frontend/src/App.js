@@ -47,57 +47,15 @@ function App() {
             <div className="product-rating">4.5 Stars (10 Reviews)</div>
             </div>
             </li>
+            
+            
             )
-        }
-        <li>
-          <div className="product">
-            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="products-img"/>
-            <div className="product-name"><a href="product.html">Fourth Street</a></div>
-            <div className="product-brand">Wine</div>
-            <div className="product-price">Ksh999</div>
-            <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-            </li>
-            <li>
-          <div className="product">
-            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
-            <div className="product-name"><a href="product.html">Fourth Street</a></div>
-            <div className="product-brand">Wine</div>
-            <div className="product-price">Ksh999</div>
-            <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-            </li>
-            <li>
-          <div className="product">
-            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
-            <div className="product-name"><a href="product.html">Fourth Street</a></div>
-            <div className="product-brand">Wine</div>
-            <div className="product-price">Ksh999</div>
-            <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-            </li>
-            <li>
-          <div className="product">
-            <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
-            <div className="product-name"><a href="product.html">Fourth Street</a></div>
-            <div className="product-brand">Wine</div>
-            <div className="product-price">Ksh999</div>
-            <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-            </li>
-            <li>
-          <div className="product">
-            <img  className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="product-img"/>
-            <div className="product-name"><a href="product.html">Fourth Street</a></div>
-            <div className="product-brand">Wine</div>
-            <div className="product-price">Ksh999</div>
-            <div className="product-rating">4.5 Stars (10 Reviews)</div>
-            </div>
-            </li>
+          }
           </ul>
-    </div>
-
+          </div>
+ 
   </main>
+  
  {/* Footer */}
     <MDBFooter color="stylish-color-dark" className="page-footer font-small pt-4 mt-4">
       <MDBContainer fluid className="text-center text-md-left">
