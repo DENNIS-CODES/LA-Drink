@@ -1,6 +1,6 @@
 import './App.css';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-
+import data from './data'
 function App() {
   return (
   <div className="App">
@@ -36,7 +36,9 @@ function App() {
   <main className="main">
     <div className="content">
       <ul className="products">
-        <li>
+        {
+          data.products.map(product =>
+            <li>
           <div className="product">
             <img  className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="wine"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
@@ -45,7 +47,9 @@ function App() {
             <div className="product-rating">4.5 Stars (10 Reviews)</div>
             </div>
             </li>
-            <li>
+            )
+        }
+        <li>
           <div className="product">
             <img className="product-image" src= {require("/images/4th-Street-Red.jpeg")} alt="products-img"/>
             <div className="product-name"><a href="product.html">Fourth Street</a></div>
