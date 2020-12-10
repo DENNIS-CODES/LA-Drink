@@ -1,4 +1,5 @@
 import './App.css';
+import {Browserrouter, Route} from 'react-router-dom'
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
 import ProductScreen from './screen/ProductScreen';
@@ -6,6 +7,7 @@ import ShopScreen from './screen/ShopScreen';
 
 function App() {
   return (
+    <Browserrouter>
   <div className="App">
     <header className="header">
       <section className="nav">
@@ -60,6 +62,7 @@ function App() {
           </div>
  
   </main>
+  
   
  {/* Footer */}
     <MDBFooter color="stylish-color-dark" className="page-footer font-small pt-4 mt-4">
@@ -186,7 +189,8 @@ function App() {
         </MDBContainer>
       </div>
     </MDBFooter>
-  </div>  
+  </div>
+  </Browserrouter>  
   );
 }
 
