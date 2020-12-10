@@ -1,6 +1,9 @@
 import './App.css';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
+import ProductScreen from './screen/ProductScreen';
+import ShopScreen from './screen/ShopScreen';
+
 function App() {
   return (
   <div className="App">
@@ -35,6 +38,8 @@ function App() {
  {/*</section>PRODUCT BODY*/}
   <main className="main">
     <div className="content">
+      <Route path="/products/:id" component={ProductScreen} />
+      <Route path="/" exact={true} component={ShopScreeen}/>
       <ul className="products">
         {
           data.products.map(product =>
