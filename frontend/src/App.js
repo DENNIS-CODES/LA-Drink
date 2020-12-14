@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route, Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
 import ProductScreen from './screen/ProductScreen';
@@ -12,7 +12,7 @@ function App() {
     <header className="header">
       <section className="nav">
 			<div className="logo-image">
-				<a className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></a>
+				<Link className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></Link>
   <ul className="main-nav-links">
     <li><a href="#!" className="button">Shop</a></li>
     <li><a href="#!" className="button">Vodka</a></li>
