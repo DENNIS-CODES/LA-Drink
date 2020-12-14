@@ -1,5 +1,5 @@
 import './App.css';
-import {Browserrouter, Route} from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
 import ProductScreen from './screen/ProductScreen';
@@ -7,7 +7,7 @@ import ShopScreen from './screen/ShopScreen';
 
 function App() {
   return (
-    <Browserrouter>
+    <BrowserRouter>
   <div className="App">
     <header className="header">
       <section className="nav">
@@ -54,7 +54,6 @@ function App() {
             <div className="product-rating">{product.rating} Stars (10 Reviews)</div>
             </div>
             </li>
-            
             )
           }
           </ul>
@@ -189,7 +188,7 @@ function App() {
       </div>
     </MDBFooter>
   </div>
-  </Browserrouter>  
+  </BrowserRouter>  
   );
 }
 
