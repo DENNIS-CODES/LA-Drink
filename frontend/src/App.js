@@ -3,7 +3,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
 import ProductScreen from './screen/ProductScreen';
-import logo from './images/logo.png';
+import logo from './img/logo.png';
+import image from './img/image2.jpg';
 function App() {
   return (
     <BrowserRouter>
