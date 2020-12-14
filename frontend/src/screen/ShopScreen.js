@@ -1,4 +1,5 @@
 import React from 'react';
+import data from '../data';
 
 function ShopScreen (props) {
     return <ul className="products">

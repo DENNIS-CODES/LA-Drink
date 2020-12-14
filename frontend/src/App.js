@@ -4,7 +4,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
 import ProductScreen from './screen/ProductScreen';
 import ShopScreen from './screen/ShopScreen';
-
+import logo from './logo.png';
 function App() {
   return (
     <BrowserRouter>
@@ -12,7 +12,7 @@ function App() {
     <header className="header">
       <section className="nav">
 			<div className="logo-image">
-				<a className="navbar-brand" href="/"><img src= {require ("/images/logo.png")} alt="logo" className="img-fluid"/></a>
+				<a className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></a>
   <ul className="main-nav-links">
     <li><a href="#!" className="button">Shop</a></li>
     <li><a href="#!" className="button">Vodka</a></li>

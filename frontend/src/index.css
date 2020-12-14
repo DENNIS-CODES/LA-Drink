@@ -37,7 +37,6 @@ body {
 }
 /* HEADER */
 div.nav {
-  background-image: url(/images/image2.jpg);
   height: 95vh;
   -webkit-background-size: cover;
   -moz-background-size: cover;
