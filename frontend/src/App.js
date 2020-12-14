@@ -3,8 +3,8 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import data from './data'
 import ProductScreen from './screen/ProductScreen';
+import ShopScreen from './screen/ShopScreen';
 import logo from './img/logo.png';
-import image from './img/image2.jpg';
 function App() {
   return (
     <BrowserRouter>
@@ -41,6 +41,7 @@ function App() {
   <main className="main">
     <div className="content">
       <Route path="/products/:id" component={ProductScreen} />
+      <Route path="/products/:id" component={ShopScreen} />
       <ul className="products">
         {
           data.products.map(product =>

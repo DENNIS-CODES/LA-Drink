@@ -36,15 +36,6 @@ body {
   overflow-x: hidden;
 }
 /* HEADER */
-.nav {
-  height: 95vh;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-
-    
-}
 .navbar-brand {
   height: 25px;
   text-align: left;
