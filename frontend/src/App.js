@@ -1,7 +1,6 @@
 import './App.css';
 import {BrowserRouter, Route, Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import data from './data';
 import ProductScreen from './screen/ProductScreen';
 import ShopScreen from './screen/ShopScreen';
 import logo from './img/logo.png';

@@ -35,6 +35,9 @@ body {
   background: var(--pale-yellow);
   overflow-x: hidden;
 }
+#root {
+  height: 100%;
+}
 /* HEADER */
 .navbar-brand {
   height: 25px;
