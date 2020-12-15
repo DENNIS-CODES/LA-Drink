@@ -264,3 +264,7 @@ color: orange;
   background-color: #f8f8f8;
   padding: 1rem;
 }
+.details-action ul li:last-child {
+  display: flex;
+  flex-direction: column;
+}
