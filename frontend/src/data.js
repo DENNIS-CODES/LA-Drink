@@ -121,4 +121,4 @@ export default {
         numReviews: 10
     }
 ]
-}
+};
