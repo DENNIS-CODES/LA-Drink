@@ -229,3 +229,8 @@ color: orange;
 .footer-copyright a {
   color: red;
 }
+
+/* product details */
+.details-info {
+  flex: 1 1 30rem;
+}
