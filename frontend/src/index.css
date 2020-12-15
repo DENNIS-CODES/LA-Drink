@@ -241,3 +241,13 @@ color: orange;
 .details-info li, .details-action li {
   margin-bottom: 1rem;
 }
+.details {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.details-image {
+  flex: 2 1 60rem;
+}
