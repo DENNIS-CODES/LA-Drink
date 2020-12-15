@@ -1,10 +1,11 @@
 import './App.css';
 import {BrowserRouter, Route, Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
-import data from './data'
+import data from './data';
 import ProductScreen from './screen/ProductScreen';
 import ShopScreen from './screen/ShopScreen';
 import logo from './img/logo.png';
+
 function App() {
   return (
     <BrowserRouter>
@@ -14,7 +15,7 @@ function App() {
 			<div className="logo-image">
 				<Link className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></Link>
   <ul className="main-nav-links">
-    <li><a href="#!" className="button">Shop</a></li>
+    <li><Link to = "ShopScreen" className="button">Shop</Link></li>
     <li><a href="#!" className="button">Vodka</a></li>
     <li><a href="#!" className="button">Beer</a></li>
     <li><a href="#!" className="button">Wine</a></li>
@@ -41,20 +42,20 @@ function App() {
   <main className="main">
     <div className="content">
       <Route path="/products/:id" component={ProductScreen} />
-      <Route path="/products/:id" component={ShopScreen} />
+      <Route path="/" exact={true} component={ShopScreen} />
       <ul className="products">
     {
       data.products.map(product =>
         <li>
       <div className="product">
-      <Link to={'/product/' + product.id}>
+      <Link to={'/product/' + product._id}>
         <img  className="product-image" src={product.image} alt="wine"/>
         </Link>
       <div className="product-name">
-          <Link to={'/product/' + product.id}>{product.name}</Link></div>
+          <Link to={'/product/' + product._id}>{product.name}</Link></div>
       <div className="product-brand">{product.brand}</div>
       <div className="product-price">ksh{product.price}</div>
-        <div className="product-rating">{product.rating} Stars (10 Reviews)</div>
+        <div className="product-rating">{product.rating} Stars ({product.numReviews} Reviews)</div>
         </div>
         </li>
         )
