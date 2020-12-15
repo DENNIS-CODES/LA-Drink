@@ -255,3 +255,12 @@ color: orange;
   max-width: 60rem;
   width: 100%;
 }
+.back-to-result {
+  padding: 1rem;
+}
+.details-action {
+  border: 0.1rem #808080 solid;
+  border-radius: 0.5rem;
+  background-color: #f8f8f8;
+  padding: 1rem;
+}
