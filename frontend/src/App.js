@@ -15,7 +15,7 @@ function App() {
 			<div className="logo-image">
 				<Link className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></Link>
   <ul className="main-nav-links">
-    <li><Link to = "ShopScreen" className="button">Shop</Link></li>
+    <li><Link to = "Shop" className="button">Shop</Link></li>
     <li><a href="#!" className="button">Vodka</a></li>
     <li><a href="#!" className="button">Beer</a></li>
     <li><a href="#!" className="button">Wine</a></li>
@@ -42,7 +42,7 @@ function App() {
   <main className="main">
     <div className="content">
       <Route path="/products/:id" component={ProductScreen} />
-      <Route path="/" exact={true} component={ShopScreen} />
+      <Route path="shop" exact={true} component={ShopScreen} />
       <ul className="products">
     {
       data.products.map(product =>

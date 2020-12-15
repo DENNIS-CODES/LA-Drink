@@ -22,4 +22,4 @@ function ShopScreen (props) {
       }
       </ul>
 }
-export default ShopScreen;
+export default ShopScreen; 
