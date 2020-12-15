@@ -238,3 +238,6 @@ color: orange;
   list-style-type: none;
   padding: 0;
 }
+.details-info li, .details-action li {
+  margin-bottom: 1rem;
+}
