@@ -234,3 +234,7 @@ color: orange;
 .details-info {
   flex: 1 1 30rem;
 }
+.details-info ul, .details-section ul {
+  list-style-type: none;
+  padding: 0;
+}
