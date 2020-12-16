@@ -5,6 +5,7 @@ import ProductScreen from './screen/ProductScreen';
 import ShopScreen from './screen/ShopScreen';
 import logo from './img/logo.png';
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -14,7 +15,7 @@ function App() {
 			<div className="logo-image">
 				<Link className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></Link>
   <ul className="main-nav-links">
-    <li><Link to = "Shop" className="button">Shop</Link></li>
+    <li><Link to = "/ShopScreen" className="button">Shop</Link></li>
     <li><a href="#!" className="button">Vodka</a></li>
     <li><a href="#!" className="button">Beer</a></li>
     <li><a href="#!" className="button">Wine</a></li>
@@ -40,7 +41,8 @@ function App() {
  {/*</section>PRODUCT BODY*/}
   <main className="main">
     <div className="content">
-      <Route path="/products/:id" component={ProductScreen} />
+      <Route path="/products/:_id" component={ProductScreen} />
+      <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
       
           </div>
