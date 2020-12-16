@@ -35,8 +35,24 @@ body {
   background: var(--pale-yellow);
   overflow-x: hidden;
 }
+<<<<<<< Updated upstream
 #root {
   height: 100%;
+=======
+/* HEADER */
+<<<<<<< HEAD
+section.nav {
+=======
+div.nav {
+>>>>>>> c42da44 (src)
+  background-image: url(./images/image2.jpg);
+  height: 95vh;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+    
+>>>>>>> Stashed changes
 }
 /* HEADER */
 .navbar-brand {
@@ -228,6 +244,7 @@ color: orange;
 }
 .footer-copyright a {
   color: red;
+<<<<<<< Updated upstream
 }
 
 /* product details */
@@ -279,4 +296,6 @@ color: orange;
 }
 .button.primary {
   background-color: #f50707;
+=======
+>>>>>>> Stashed changes
 }

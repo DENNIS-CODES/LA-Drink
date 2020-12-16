@@ -41,12 +41,73 @@ function App() {
  {/*</section>PRODUCT BODY*/}
   <main className="main">
     <div className="content">
+<<<<<<< Updated upstream
       <Route path="/products/:_id" component={ProductScreen} />
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
       
           </div>
  
+=======
+      <ul className="products">
+        <li>
+          <div className="product">
+            <img src= {require("/images/4th-Street-Red.jpeg")} className="product-image"/>
+            <div className="product-name"><a href="product.html">Fourth Street</a></div>
+            <div className="product-brand">Wine</div>
+            <div className="product-price">Ksh999</div>
+            <div className="product-rating">4.5 Stars (10 Reviews)</div>
+            </div>
+            </li>
+            <li>
+          <div className="product">
+            <img src= {require("/images/4th-Street-Red.jpeg")} className="product-image" alt="products-img"/>
+            <div className="product-name"><a href="product.html">Fourth Street</a></div>
+            <div className="product-brand">Wine</div>
+            <div className="product-price">Ksh999</div>
+            <div className="product-rating">4.5 Stars (10 Reviews)</div>
+            </div>
+            </li>
+            <li>
+          <div className="product">
+            <img src= {require("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <div className="product-name"><a href="product.html">Fourth Street</a></div>
+            <div className="product-brand">Wine</div>
+            <div className="product-price">Ksh999</div>
+            <div className="product-rating">4.5 Stars (10 Reviews)</div>
+            </div>
+            </li>
+            <li>
+          <div className="product">
+            <img src= {require ("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <div className="product-name"><a href="product.html">Fourth Street</a></div>
+            <div className="product-brand">Wine</div>
+            <div className="product-price">Ksh999</div>
+            <div className="product-rating">4.5 Stars (10 Reviews)</div>
+            </div>
+            </li>
+            <li>
+          <div className="product">
+            <img src={require ("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <div className="product-name"><a href="product.html">Fourth Street</a></div>
+            <div className="product-brand">Wine</div>
+            <div className="product-price">Ksh999</div>
+            <div className="product-rating">4.5 Stars (10 Reviews)</div>
+            </div>
+            </li>
+            <li>
+          <div className="product">
+             <img src= {require("/images/4th-Street-Red.jpeg")} className="product-image" alt="product-img"/>
+            <div className="product-name"><a href="product.html">Fourth Street</a></div>
+            <div className="product-brand">Wine</div>
+            <div className="product-price">Ksh999</div>
+            <div className="product-rating">4.5 Stars (10 Reviews)</div>
+            </div>
+            </li>
+          </ul>
+    </div>
+
+>>>>>>> Stashed changes
   </main>
   
   
