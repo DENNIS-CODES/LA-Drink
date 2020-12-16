@@ -268,3 +268,7 @@ color: orange;
   display: flex;
   flex-direction: column;
 }
+.back-to-result{
+  padding: 1rem;
+  font-weight: 600;
+}
