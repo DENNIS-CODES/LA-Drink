@@ -2,9 +2,10 @@ import './App.css';
 import {BrowserRouter, Route, Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import ProductScreen from './screen/ProductScreen';
+import vodkaScreen from './screen/vodkaScreen';
 import ShopScreen from './screen/ShopScreen';
 import logo from './img/logo.png';
-import vodka from './vodka';
+import vodka from './screen/vodka';
 
 
 function App() {
@@ -45,7 +46,8 @@ function App() {
       <Route path="/products/:_id" component={ProductScreen} />
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
-      <Route path="/vodka" component={ProductScreen} />
+      <Route path="/vodka" component={vodkaScreen} />
+      <Route path="/" exact={true} component={vodka} />
       
           </div>
  
