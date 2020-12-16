@@ -274,3 +274,9 @@ color: orange;
   border: .1rem #808080 solid;
   cursor: pointer;
 }
+.button:hover {
+  border: .1rem #fd9104 solid;
+}
+.button.primary {
+  background-color: #f50707;
+}
