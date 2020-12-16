@@ -4,6 +4,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import ProductScreen from './screen/ProductScreen';
 import ShopScreen from './screen/ShopScreen';
 import logo from './img/logo.png';
+import vodka from './vodka';
 
 
 function App() {
@@ -16,7 +17,7 @@ function App() {
 				<Link className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></Link>
   <ul className="main-nav-links">
     <li><Link to = "/ShopScreen" className="button">Shop</Link></li>
-    <li><a href="#!" className="button">Vodka</a></li>
+    <li><Link to ="/vodka" className="button">Vodka</Link></li>
     <li><a href="#!" className="button">Beer</a></li>
     <li><a href="#!" className="button">Wine</a></li>
     <li><a href="#!" className="button">Ram</a></li>
@@ -44,6 +45,7 @@ function App() {
       <Route path="/products/:_id" component={ProductScreen} />
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
+      <Route path="/vodka" component={ProductScreen} />
       
           </div>
  

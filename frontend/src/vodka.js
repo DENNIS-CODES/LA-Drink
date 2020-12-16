@@ -1,11 +1,11 @@
 import React from 'react';
-import data from '../data';
+import datavodka from './datavodka';
 import { Link } from 'react-router-dom';
 
 function vodka (props) {
     return <ul className="products">
     {
-      data.products.map(product =>
+      datavodka.products.map(product =>
         <li>
       <div className="product">
       <Link to={'/product/' + product._id}>
