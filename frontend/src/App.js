@@ -47,7 +47,6 @@ function App() {
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
       <Route path="/vodka" component={vodkaScreen} />
-      <Route path="/" exact={true} component={vodka} />
       
           </div>
  
