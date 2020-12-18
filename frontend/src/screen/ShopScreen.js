@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import data from '../data';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
+
 
 function ShopScreen (props) {
+
+  const [products, setProduct] = useState([])
+
+  useEffect(() => {
+    effect
+    return () => {
+      //
+    };
+  }, [])
+
     return <ul className="products">
     {
       data.products.map(product =>

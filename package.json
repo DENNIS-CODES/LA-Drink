@@ -1,6 +1,6 @@
 {
   "name": "frontend",
-  
+  "proxy": "https://127.0.0.1:5000",
   "version": "1.0.0",
   "description": "An Ecommerce Website created using React",
   "main": "script.js",
