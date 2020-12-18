@@ -5,7 +5,6 @@ import ProductScreen from './screen/ProductScreen';
 import vodkaScreen from './screen/vodkaScreen';
 import ShopScreen from './screen/ShopScreen';
 import logo from './img/logo.png';
-import vodka from './screen/vodka';
 
 
 function App() {
