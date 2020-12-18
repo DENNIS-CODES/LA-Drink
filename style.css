@@ -236,3 +236,10 @@ color: orange;
 .footer-copyright a {
   color: red;
 }
+.footer link facebook div {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    color: green;
+    font-size: 20px;
+    padding: 10px;
+ }

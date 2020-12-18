@@ -19,10 +19,10 @@ function App() {
   <ul className="main-nav-links">
     <li><Link to = "/ShopScreen" className="button">Shop</Link></li>
     <li><Link to ="/vodka" className="button">Vodka</Link></li>
-    <li><Link href="#!" className="button">Beer</Link></li>
-    <li><Link href="#!" className="button">Wine</Link></li>
-    <li><Link href="#!" className="button">Ram</Link></li>
-    <li><Link href="#!" className="button">Contacts</Link></li>
+    <li><Link to ="/Beer" className="button">Beer</Link></li>
+    <li><Link to ="/wine" className="button">Wine</Link></li>
+    <li><Link to ="/ram" className="button">Ram</Link></li>
+    <li><Link to ="/contacts" className="button">Contacts</Link></li>
 
   </ul>
   </div>
