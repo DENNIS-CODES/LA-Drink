@@ -6,7 +6,7 @@ import axios from 'axios';
 
 function ShopScreen (props) {
 
-  const [products, setProduct] = useState([])
+  const [products, setPdroduct] = useState([])
 
   useEffect(() => {
     const fetchData = async () =>{
