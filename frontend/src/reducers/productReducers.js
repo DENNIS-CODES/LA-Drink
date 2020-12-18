@@ -1,4 +1,4 @@
-import { PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS } from "../constants"
+import { PRODUCT_LIST_REQUEST, PRODUCT_LIST_SUCCESS } from "../constants/productConstants";
 
 function productListReducer(state= {products: [] }, action) {
 
