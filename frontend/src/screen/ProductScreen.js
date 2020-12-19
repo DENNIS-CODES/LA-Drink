@@ -19,13 +19,10 @@ function ProductScreen (props) {
         <div className="back-to-result">
             <Link to="/">Back to Result</Link>
             </div>
-            {loading? <div>Loading...</div>:
-            error? <div>{error} </div>:
+            {loading ? <div>Loading...</div>:
+            error ? <div>{error} </div>:
             (
-                
-            )
-            }
-            <div className="details">
+             <div className="details">
                 <div className="details-image">
                     <img src={product.image} alt="product"></img>
                 </div>
@@ -70,7 +67,10 @@ function ProductScreen (props) {
                     </ul>
                 </div>
 
-            </div>
+            </div>   
+            )
+            }
+            
 
         
     </div>
