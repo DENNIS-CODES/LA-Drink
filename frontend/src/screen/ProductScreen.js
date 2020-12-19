@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useDispatch } from 'react';
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { detailsProduct } from '../actions/productActions';
@@ -10,7 +10,7 @@ function ProductScreen (props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(detailsProducts(props.match.params.id));
+        dispatch(detailsProduct(props.match.params.id));
         return () => {
             //
         };
