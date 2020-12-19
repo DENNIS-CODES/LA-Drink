@@ -7,8 +7,6 @@ import { listProducts } from "../actions/productActions";
 
 
 function ShopScreen (props) {
-
-  const [products, setPdroduct] = useState([]);
   const productList = useSelector(state => state.productList);
   const { products, loading, error } = productList;
   const dispatch = useDispatch();
