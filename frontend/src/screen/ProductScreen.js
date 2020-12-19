@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
+import { detailsProduct } from '../actions/productActions';
 
 function ProductScreen (props) {
-
+    const [qty, setQty] = useState(1);
     const productDetails = useSelector(state => state.productDetails);
     const { product, loading, error } = productDetails;
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(detailsProducts());
+        dispatch(detailsProducts(props.match.params.id));
         return () => {
             //
         };
@@ -54,7 +55,7 @@ function ProductScreen (props) {
                          Status: {product.price}   
                         </li>
                         <li>
-                         Qty: <select>
+                         Qty: <select value={qty} onchange={(e) => { setQty(e.target.value)}}>
                              <option>1</option>
                              <option>2</option>
                              <option>3</option>

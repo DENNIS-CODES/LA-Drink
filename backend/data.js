@@ -8,7 +8,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'2',
@@ -18,7 +19,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'3',
@@ -28,7 +30,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'4',
@@ -38,7 +41,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'5',
@@ -48,7 +52,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'6',
@@ -58,7 +63,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'7',
@@ -68,7 +74,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'8',
@@ -78,7 +85,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'9',
@@ -88,7 +96,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'10',
@@ -98,7 +107,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'11',
@@ -108,7 +118,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     },
     {
         _id:'12',
@@ -118,7 +129,8 @@ export default {
         price: 999,
         brand: 'nike',
         rating: 4.5,
-        numReviews: 10
+        numReviews: 10,
+        countInStock: 6,
     }
 ]
 };
