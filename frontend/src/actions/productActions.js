@@ -13,8 +13,13 @@ const listProducts = () => async (dispatch) => {
    
 }
 
-const detailsProduct = (productId) => (dispatch) = {
-    
+const detailsProduct = (productId) => (dispatch) =  {
+    try {
+        dispatch({type: PRODUCT_DETAILS_REQuesT,payload: productId});
+        const {data} = await axios.get("/api/products/" + productId);
+    } catch (error) {
+
+    }
 }
 
 export { listProducts };
