@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import data from '../data';
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function ProductScreen (props) {
 
     const productDetails = useSelector(state => state.productDetails);
+    const { product, loading, error } = productDetails;
     const dispatch = useDispatch;
 
     useEffect(() => {
@@ -19,6 +19,12 @@ function ProductScreen (props) {
         <div className="back-to-result">
             <Link to="/">Back to Result</Link>
             </div>
+            {loading? <div>Loading...</div>:
+            error? <div>{error} </div>:
+            (
+                
+            )
+            }
             <div className="details">
                 <div className="details-image">
                     <img src={product.image} alt="product"></img>
