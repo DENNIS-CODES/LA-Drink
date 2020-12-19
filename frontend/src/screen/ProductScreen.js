@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import data from '../data';
+import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 
 function ProductScreen (props) {
-    console.log(props.match.params.id);
-    const product = data.products.find(x =>  x._id === props.match.params.id);
+
+    const productDetails = useSelector(state => state.productDetails);
+    const dispatch = useDispatch;
+
+    useEffect(() => {
+        dispatch(detailsProducts());
+        return () => {
+            //
+        };
+    }, [])
+    
     return <div className="details">
         <div className="back-to-result">
             <Link to="/">Back to Result</Link>

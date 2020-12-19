@@ -13,4 +13,8 @@ const listProducts = () => async (dispatch) => {
    
 }
 
+const detailsProduct = (productId) => (dispatch) = {
+    
+}
+
 export { listProducts };
