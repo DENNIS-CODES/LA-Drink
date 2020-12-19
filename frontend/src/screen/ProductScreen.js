@@ -56,10 +56,9 @@ function ProductScreen (props) {
                         </li>
                         <li>
                          Qty: <select value={qty} onchange={(e) => { setQty(e.target.value)}}>
-                             <option>1</option>
-                             <option>2</option>
-                             <option>3</option>
-                             <option>4</option>
+                             {[...Array(product.countInStock).keys()].map(x=>
+                             <option value={x + 1}>{x + 1}</option>
+                             )}
                              </select>  
                         </li>
                         <li>
