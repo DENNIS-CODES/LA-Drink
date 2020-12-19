@@ -9,7 +9,7 @@ app.get("/api/products/:id", (req, res) => {
     if(product)
     res.send(product);
     else
-    res.status(404).send({ msg: ""})
+    res.status(404).send({ msg: "Product Not Found." })
 });
 
 app.listen(5000, () => { console.log("server started at http://localhost:5000") });
