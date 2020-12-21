@@ -31,8 +31,10 @@ function vodkaScreen (props) {
                         </div>
                         <div className="product-brand">{product.brand}</div>
                         <div className="product-price">ksh{product.price}</div>
+                        <div className="product-rating">{product.rating} Stars (10 Reviews)</div>
                     </div>
-                </li>)
+                </li>
+                )
         }
     </ul>
 }
