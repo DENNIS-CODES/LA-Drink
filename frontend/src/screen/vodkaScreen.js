@@ -1,62 +1,40 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import datavodka from '../datavodka';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import {listProducts } from "../actions/productActions";
 
 function vodkaScreen (props) {
-    console.log(props.match.params.id);
-    const product = datavodka.products.find(x =>  x._id === props.match.params.id);
-    return <div className="details">
-        <div className="back-to-result">
-            <Link to="/">Back to Result</Link>
-            </div>
-            <div className="details">
-                <div className="details-image">
-                    <img src={product.image} alt="product"></img>
-                </div>
-                <div className="details-info">
-                    <ul>
-                        <li>
-                           <h4>{product.name}</h4> 
-                        </li>
-                        <li>
-                            {product.rating} stars ({product.numReviews} Reviews)
-                        </li>
-                        <li>
-                        Price: <b>Ksh {product.price}</b>
-                        </li>
-                        <li>
-                            Description:
-                            <div>
-                                {product.description}
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div className="details-action">
-                    <ul>
-                        <li>
-                         Price: {product.price}   
-                        </li>
-                        <li>
-                         Status: {product.price}   
-                        </li>
-                        <li>
-                         Qty: <select>
-                             <option>1</option>
-                             <option>2</option>
-                             <option>3</option>
-                             <option>4</option>
-                             </select>  
-                        </li>
-                        <li>
-                            <button className="button">Add to cart</button>
-                        </li>
-                    </ul>
-                </div>
+    const productList = useSelector(state => state.productList);
+    const { products, loading, error } = productList;
+    const dispatch = useDispatch();
 
-            </div>
+    useEffect(() => {
+        dispatch(listProducts());
+        return () => {
+            //
+        };
+    }, [])
 
-        
-    </div>
+    return loading? <div>Loading...</div> :
+    error? <div>{error}</div> :
+    <ul className="products">
+        {
+            products.map(product =>
+                <li key={product.id}>
+                    <div className="product">
+                        <Link to={'/product/' + product.id}>
+                            <img className="product-image" src={product.image} alt="ciroc"/>
+                        </Link>
+                        <div className="product-name">
+                            <Link to={'/product/' + product._id}>{product.name}</Link>
+                        </div>
+                        <div className="product-brand">{product.brand}</div>
+                        <div className="product-price">ksh{product.price}</div>
+                    </div>
+                </li>)
+        }
+    </ul>
 }
+
 export default vodkaScreen;
