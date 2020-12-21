@@ -4,8 +4,6 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from "../actions/productActions";
 
-
-
 function ShopScreen (props) {
   const productList = useSelector(state => state.productList);
   const { products, loading, error } = productList;
