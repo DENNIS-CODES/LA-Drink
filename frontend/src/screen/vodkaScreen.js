@@ -1,8 +1,8 @@
-import React, { useEffect } from 'react';
-import datavodka from '../datavodka';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import {listProducts } from "../actions/productActions";
+import  { useEffect } from 'react';
 
 function vodkaScreen (props) {
     const productList = useSelector(state => state.productList);
