@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
+import { addToCart } from '../actions/cartActions';
 function CartScreen(props){
     const productId = props.match.params.id;
     const qty = props.location.search? Number(props.locatin.search.split("=")[1]):1;
-
+    const dispatch = useDispatch();
     useEffect(() =>{
         if(productId){
-            dispatchEvent(addToCart(productID, qty));
+            dispatch(addToCart(productID, qty));
         }
     }, [])
     return <div>

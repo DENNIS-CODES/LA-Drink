@@ -4,6 +4,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import ProductScreen from './screen/ProductScreen';
 import vodkaScreen from './screen/vodkaScreen';
 import ShopScreen from './screen/ShopScreen';
+import CartScreen from './screen/CartScreen';
 import logo from './img/logo.png';
 
 
@@ -46,7 +47,7 @@ function App() {
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
       <Route path="/vodka" component={vodkaScreen} />
-      <Route path="/cart/:id?"  component={Cartscreen} />
+      <Route path="/cart/:id?"  component={CartScreen} />
           </div>
  
   </main>
