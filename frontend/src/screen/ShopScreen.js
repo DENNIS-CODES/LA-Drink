@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from "../actions/productActions";
-import { useEffect } from 'react';
+
+
 
 function ShopScreen (props) {
   const productList = useSelector(state => state.productList);
@@ -38,4 +39,4 @@ function ShopScreen (props) {
       }
       </ul>
 }
-export default ShopScreen; 
+export default ShopScreen;  
