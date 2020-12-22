@@ -5,9 +5,9 @@ function CartScreen(props){
 
     useEffect(() =>{
         if(productId){
-            dispatchEvent(addToCart)
+            dispatchEvent(addToCart(productID, qty));
         }
-    })
+    }, [])
     return <div>
         Cart Screen
     </div>
