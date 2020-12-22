@@ -46,7 +46,7 @@ function App() {
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
       <Route path="/vodka" component={vodkaScreen} />
-      
+      <Route path="/cart/:id?"  component={Cartscreen} />
           </div>
  
   </main>
