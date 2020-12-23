@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
 import { addToCart } from '../actions/cartActions';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 function CartScreen(props){
+
+    const cart = useSelector(state => state.cart);
+
+    const { cartItems } = cart;
+
+
+
     const productId = props.match.params.id;
     const qty = props.location.search? Number(props.location.search.split("=")[1]):1;
     const dispatch = useDispatch();
@@ -37,14 +44,27 @@ function CartScreen(props){
                                     <div>
                                         Qty:
                                         <select>
-                                            
+                                           <option valu="1">1</option>
+                                           <option valu="1">2</option>
+                                           <option valu="1">3</option> 
                                         </select>
                                     </div>
+                                </div>
+                                <div>
+                                   {item.price} 
                                 </div>
                             </div>
                            )
                    } 
             </ul>
+            <div className="cart-action">
+                <h3>
+                    Subtotal ( {cartItems.reduce((a, c) => a + c.qty), 0} items)
+                </h3>
+                <button className="button primary" disable={cartItems.length === 0}>
+                    Proceed to Checkout
+                </button>
+            </div>
         </div>
     </div>
 }
