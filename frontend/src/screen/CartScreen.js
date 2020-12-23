@@ -13,7 +13,11 @@ function CartScreen(props){
     return <div className="cart">
         <div className="cart-list">
             <ul className="cart-list-container">
-                
+               <li>
+                   <h3>
+                       Shopping Cart
+                       </h3>
+                   </li> 
             </ul>
         </div>
     </div>
