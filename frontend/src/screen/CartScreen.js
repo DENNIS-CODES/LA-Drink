@@ -20,7 +20,13 @@ function CartScreen(props){
                        <div>
                            Price
                        </div>
-                   </li> 
+                   </li>
+                   {
+                       cartItems.length ===0 ?
+                       <div>
+                           Cart is empty
+                           </div>
+                   } 
             </ul>
         </div>
     </div>
