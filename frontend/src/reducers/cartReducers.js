@@ -11,7 +11,7 @@ function cartReducer(state={cartItems:[]}, action){
                  state.cartItems.map(x=>x.product === product.product ? item : x)
             };
         }
-            return { cartITems: [...state.cartItems, item] };
+            return { cartItems: [...state.cartItems, item] };
             default:
                 return state
     }
