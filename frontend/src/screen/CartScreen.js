@@ -26,6 +26,23 @@ function CartScreen(props){
                        <div>
                            Cart is empty
                            </div>
+                           :
+                           cartItems.map( item =>
+                            <div>
+                                <img src={item.image} alt="product" />
+                                <div className="cart-name">
+                                    <div>
+                                        {item.name}
+                                    </div>
+                                    <div>
+                                        Qty:
+                                        <select>
+                                            
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                           )
                    } 
             </ul>
         </div>
