@@ -17,6 +17,9 @@ function CartScreen(props){
                    <h3>
                        Shopping Cart
                        </h3>
+                       <div>
+                           Price
+                       </div>
                    </li> 
             </ul>
         </div>
