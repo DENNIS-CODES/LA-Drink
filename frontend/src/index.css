@@ -280,3 +280,20 @@ color: orange;
 .button.primary {
   background-color: #f50707;
 }
+
+/* Cart */
+.cart {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 1rem;
+}
+.cart-list {
+  flex: 3 1 68rem;
+}
+.cart-action {
+  flex: 1 1 20rem;
+  background-color: #fbfbfb;
+  border: .1rem #f0f0f0 solid;
+  border-radius: .5rem;
+  padding: 1rem;  
+}
