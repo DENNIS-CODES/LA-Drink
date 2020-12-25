@@ -12,4 +12,6 @@ app.get("/api/products/:id", (req, res) => {
     res.status(404).send({ msg: "Product Not Found." })
 });
 
-app.listen(5000, () => { console.log("server started at http://localhost:5000") });
+app.listen(config.PORT, () => { 
+    console.log("server started at http://localhost:5000") 
+});
