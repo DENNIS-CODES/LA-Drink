@@ -301,10 +301,15 @@ color: orange;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: .1rem #c9c9c9 solid;
+
 }
 .cart-list-container li img{
   max-width: 10rem;
   max-height: 10rem;
+  
 }
 .cart-list-container {
   padding: 0;
@@ -315,4 +320,14 @@ color: orange;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+}
+.cart-image {
+  flex: 1 1;
+}
+.cart-name {
+  flex: 8 1;
+}
+.cart-price {
+  flex: 1 1;
+  font-size: 2.5rem;
 }
