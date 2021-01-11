@@ -11,14 +11,14 @@ function CartScreen(props){
 
 
     const productId = props.match.params.id;
-    const qty = props.location.search ? Number(props.location.search.split("=")[1]) : 1;
+    const qty = props.location.search ? Number(props.location.search.split("=")[1]):1;
     const dispatch = useDispatch();
     const removeFromCartHandler = (productId) => {
       dispatch(removeFromCart(productId));
 
     }
     useEffect(() => {
-        if (productId) {
+        if(productId) {
             dispatch(addToCart(productId, qty));
         }
     }, []);
