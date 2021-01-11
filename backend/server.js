@@ -6,7 +6,9 @@ import config from './config';
 dotenv.config();
 
 const mongodbUrl = config.MONGODB_URL;
-
+Mongoose.connect(mongodbUrl, {
+    useNewUrlParser: true
+}).catch(error => console.log(error.reason));
 
 const app =express();
 
