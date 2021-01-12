@@ -1,5 +1,6 @@
 import express from 'express';
 import User from '../models/userModel';
+
 const router = express.Router();
 
 router.post('/signin', async (req, res) =>{
@@ -14,11 +15,11 @@ router.post('/signin', async (req, res) =>{
             name: signinUser.name,
             email: signinUser.email,
             isAdmin: signinUser.isAdmin,
-            token: getToken{ user }
-        });
+            token: getToken(user)
+        })
 
     } else {
-        req.status(401).send({msg:'invalid Email or Password.'});
+        res.status(401).send({msg:'invalid Email or Password.'});
     }
 
 
