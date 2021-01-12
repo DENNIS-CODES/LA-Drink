@@ -8,17 +8,17 @@ router.post('/signin', async (req, res) =>{
         email: req.body.email,
         password: req.body.password
     });
-    if(signinuser){
+    if(signinUser){
         res.send({
             _id: signinUser.id,
             name: signinUser.name,
             email: signinUser.email,
             isAdmin: signinUser.isAdmin,
             token: getToken{user}
-        })
+        });
 
     } else {
-        req.statusCode(401).send({msg:'nvalid Email or Password.'});
+        req.status(401).send({msg:'invalid Email or Password.'});
     }
 
 
