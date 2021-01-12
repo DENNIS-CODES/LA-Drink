@@ -28,6 +28,17 @@ function SigninScreen(props) {
                 </li>
              <li>
                  <label for="password">Password</label>
+                 <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
+                 </input>
+                </li>
+                <li>
+                    <button type="submit" className="button-primary">Signin</button>
+                </li>
+                <li>
+                    New to La-Drink?
+                </li>
+                <li>
+                    <Link to="/register" className>Create your La-Drink account</Link>
                 </li>
             </ul>
         </form>
