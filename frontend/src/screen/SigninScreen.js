@@ -19,10 +19,16 @@ function SigninScreen(props) {
     return <div classname="form">
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
+                <li>
                 <label for="email">
                     Email
                 </label>
-                <input type="email" name="email" id="email" onCharge{(e) => setEamil}
+                <input type="email" name="email" id="email" onCharge={(e) => setEamil(e.target.value)}>
+                </input>
+                </li>
+             <li>
+                 <label for="password">Password</label>
+                </li>
             </ul>
         </form>
     </div>
