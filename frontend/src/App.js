@@ -16,6 +16,11 @@ function App() {
       <section className="nav">
 			<div className="logo-image">
 				<Link className="navbar-brand" href="/"><img src= {logo} alt="logo" className="img-fluid"/></Link>
+        <a href="cart.html">Cart</a>
+        <Link to="/signin">
+        <a href="sign.html">Sign in</a>
+        </Link>
+        
   <ul className="main-nav-links">
     <li><Link to = "/ShopScreen" className="button">Shop</Link></li>
     <li><Link to ="/vodka" className="button">Vodka</Link></li>
