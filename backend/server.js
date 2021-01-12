@@ -8,8 +8,10 @@ import userRoute from './routes/userRoute';
 dotenv.config();
 
 const mongodbUrl = config.MONGODB_URL;
-Mongoose.connect(mongodbUrl, {
-    useNewUrlParser: true
+mongoose.connect(mongodbUrl, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
 }).catch(error => console.log(error.reason));
 
 const app =express();
