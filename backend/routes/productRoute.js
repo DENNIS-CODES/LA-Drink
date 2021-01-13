@@ -21,5 +21,8 @@ router.post("/", async(req, res) =>{
         numReviews: req.body.numReviews, 
     });
     const newProduct = await product.save();
+    if(newProduct){
+        res.status(201).send({message:'New product Created'})
+    }
 })
 export default router;
