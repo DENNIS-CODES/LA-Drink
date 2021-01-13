@@ -19,6 +19,7 @@ router.post("/", async(req, res) =>{
         description: req.body.description,
         rating: req.body.rating,
         numReviews: req.body.numReviews, 
-    })
+    });
+    const newProduct = await product.save();
 })
 export default router;
