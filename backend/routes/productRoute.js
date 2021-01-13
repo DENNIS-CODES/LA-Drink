@@ -8,4 +8,17 @@ router.get("/", async (req, res) =>{
     res.send(products);
 });
 
+router.post("/", async(req, res) =>{
+    const product = new Product({
+        name: req.body.name,
+        name: req.body.name,
+        name: req.body.name,
+        name: req.body.name,
+        name: req.body.name,
+        name: req.body.name,
+        name: req.body.name,
+        name: req.body.name,
+        name: req.body.name, 
+    })
+})
 export default router;
