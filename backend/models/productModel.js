@@ -2,9 +2,13 @@ import  mongoose  from 'mongoose';
 
 const productSchema = new mongoose.Schema({
     name:{ type: String, required: true},
-    email: { type: String, required: true, unique: true},
-    password: { type: String, required: true},
-    isAdmin: { type: Boolean, required: true, default: false}
+    image:{ type: String, required: true},
+    brand:{ type: String, required: true},
+    category:{ type: String, required: true},
+    countInStock:{ type: String, required: true},
+    numReviews:{ type: String, required: true},
+    
+    
 });
 
 const productModel = mongoose.model("product", productSchema);
