@@ -11,14 +11,14 @@ router.get("/", async (req, res) =>{
 router.post("/", async(req, res) =>{
     const product = new Product({
         name: req.body.name,
-        name: req.body.name,
-        name: req.body.name,
-        name: req.body.name,
-        name: req.body.name,
-        name: req.body.name,
-        name: req.body.name,
-        name: req.body.name,
-        name: req.body.name, 
+        price: req.body.price,
+        image: req.body.image,
+        brand: req.body.brand,
+        category: req.body.icategory,
+        countInStock: req.body.countInStock,
+        description: req.body.description,
+        rating: req.body.rating,
+        numReviews: req.body.numReviews, 
     })
 })
 export default router;
