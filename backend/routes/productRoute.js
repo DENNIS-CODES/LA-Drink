@@ -24,5 +24,6 @@ router.post("/", async(req, res) =>{
     if(newProduct){
        return res.status(201).send({ message:'New product Created', data: newProduct });
     }
+    return res.status(500).send({ message: 'Error in Creating Product.' })
 })
 export default router;
