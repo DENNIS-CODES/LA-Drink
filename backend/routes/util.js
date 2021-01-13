@@ -19,8 +19,14 @@ const isAuth = (req, res, next) => {
             return
         });
     }
-    return res.status(401).send({ msg: "Tken is not supplied." })
+    return res.status(401).send({ msg: "Token is not supplied." })
+}
+const isAdmin = (req, res, next) => {
+    if(req.user && req.user.isAdmin) {
+        return next();
+    }
+    return res.status(401).send({ msg: 'Admin Token is not valid.' })
 } 
 export {
-    getToken 
+    getToken, isAuth, isAdmin 
 }
