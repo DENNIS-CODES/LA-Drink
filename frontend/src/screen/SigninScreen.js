@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useDispatch } from 'react';
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
-import { detailsProduct } from '../actions/productActions';
+import { useSelector, useDispatch } from 'react-redux';
+import { signin } from '../actions/userActions';
 
 function SigninScreen(props) {
     const [email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
+    const userSignin = useSelector(state => state.userSignin);
+    const { loading, userInfo, error } = userSignin;
     const dispatch = useDispatch();
 
     useEffect(() => {
