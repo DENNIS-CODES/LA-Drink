@@ -22,7 +22,7 @@ router.post("/", async(req, res) =>{
     });
     const newProduct = await product.save();
     if(newProduct){
-        res.status(201).send({message:'New product Created'})
+        res.status(201).send({ message:'New product Created', data: newProduct });
     }
 })
 export default router;
