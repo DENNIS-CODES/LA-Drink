@@ -12,14 +12,16 @@ function SigninScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-
+        if (userInfo) {
+           props.history.push("/"); 
+        }
         return () => {
             //
         };
-    }, []);
+    }, [userInfo]);
     const submitHandler = (e) =>{
        e.preventDefault();
-       dispatch(signinin(email, password)); 
+       dispatch(signin(email, password)); 
     }
     
     
