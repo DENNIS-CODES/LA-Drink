@@ -6,7 +6,7 @@ import vodkaScreen from './screen/vodkaScreen';
 import ShopScreen from './screen/ShopScreen';
 import SigninScreen from './screen/SigninScreen';
 import CartScreen from './screen/CartScreen';
-import logo from './img/logo.png';
+import logo from 'logo.png';
 
 
 function App() {
@@ -53,7 +53,8 @@ function App() {
  {/*</section>PRODUCT BODY*/}
   <main className="main">
     <div className="content">
-      <Route path= "signin"  component={SigninScreen}></Route>
+      <Route path= "/signin"  component={SigninScreen}></Route>
+      <Route path= "/register"  component={RegisterScreen}></Route>
       <Route path="/products/:_id" component={ProductScreen} />
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />

@@ -1,8 +1,7 @@
-import React, { useState, useEffect, useDispatch } from 'react';
-import {useSelector} from 'react-redux';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signin } from '../actions/userActions';
+import { signin } from '../actions/userAction';
 
 function SigninScreen(props) {
     const [email, setEmail] = useState('');

@@ -1,5 +1,4 @@
 import React from 'react';
-import datavodka from '../datavodka';
 import { Link } from 'react-router-dom';
 
 function vodkaScreen (props) {

@@ -65,7 +65,7 @@ function SigninScreen(props) {
                     <button type="submit" className="button-primary">Signin</button>
                 </li>
                 <li>
-                    Already have an account? <Link to="signin">Signin</Link> 
+                    Already have an account? <Link to="/signin">Sign-in</Link> 
                 </li>
                 <li>
                     <Link to="/register" className="button secondary text-center">Create your La-Drink account</Link>
