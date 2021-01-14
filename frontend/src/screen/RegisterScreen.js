@@ -5,12 +5,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { register } from '../actions/userActions';
 
 function SigninScreen(props) {
-    const [name, setEmail] = useState('');
+    const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
     const [ rePassword, setRePassword] = useState('');
     const userRegister = useSelector(state => state.userRegister);
-    const { loading, userInfo, error } = userSignin;
+    const { loading, userInfo, error } = userRegister;
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -38,10 +38,17 @@ function SigninScreen(props) {
                     {error && <div>{error}</div>}
                 </li>
                 <li>
+                <label htmlfor="name">
+                    Name
+                </label>
+                <input type="name" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                </input>
+                </li>
+                <li>
                 <label for="email">
                     Email
                 </label>
-                <input type="email" name="email" id="email" onCharge={(e) => setEamil(e.target.value)}>
+                <input type="email" name="email" id="email" onCharge={(e) => setEmail(e.target.value)}>
                 </input>
                 </li>
              <li>
@@ -50,10 +57,15 @@ function SigninScreen(props) {
                  </input>
                 </li>
                 <li>
+                 <label htmlfor="rePassword">Re-Enter Password</label>
+                 <input type="password" id="password" name="password" onChange={(e) => setRePassword(e.target.value)}>
+                 </input>
+                </li>
+                <li>
                     <button type="submit" className="button-primary">Signin</button>
                 </li>
                 <li>
-                    New to La-Drink?
+                    Already have an account? <Link to="signin">Signin</Link> 
                 </li>
                 <li>
                     <Link to="/register" className="button secondary text-center">Create your La-Drink account</Link>
