@@ -32,6 +32,10 @@ function SigninScreen(props) {
                     <h2>Sign-In</h2>
                 </li>
                 <li>
+                    {loading && <div>Loading...</div>}
+                    {error && <div>{error}</div>}
+                </li>
+                <li>
                 <label for="email">
                     Email
                 </label>
@@ -39,7 +43,7 @@ function SigninScreen(props) {
                 </input>
                 </li>
              <li>
-                 <label for="password">Password</label>
+                 <label htmlfor="password">Password</label>
                  <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
                  </input>
                 </li>
