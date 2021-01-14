@@ -4,11 +4,14 @@ import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import ProductScreen from './screen/ProductScreen';
 import vodkaScreen from './screen/vodkaScreen';
 import ShopScreen from './screen/ShopScreen';
+import SigninScreen from './screen/SigninScreen';
 import CartScreen from './screen/CartScreen';
 import logo from './img/logo.png';
 
 
 function App() {
+  const userSignin = userSelector(state=>state.userSignin);
+  const {userInfo} = userSignin;
   return (
     <BrowserRouter>
   <div className="App">
