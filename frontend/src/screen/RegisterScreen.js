@@ -2,29 +2,41 @@ import React, { useState, useEffect, useDispatch } from 'react';
 import {useSelector} from 'react-redux';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signin } from '../actions/userActions';
+import { register } from '../actions/userActions';
 
 function SigninScreen(props) {
+    const [name, setEmail] = useState('');
     const [email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
-    const userSignin = useSelector(state => state.userSignin);
+    const [ rePassword, setRePassword] = useState('');
+    const userRegister = useSelector(state => state.userRegister);
     const { loading, userInfo, error } = userSignin;
     const dispatch = useDispatch();
 
     useEffect(() => {
-
+        if (userInfo) {
+           props.history.push("/"); 
+        }
         return () => {
             //
         };
-    }, []);
+    }, [userInfo]);
     const submitHandler = (e) =>{
-       e.preventDefault(); 
+       e.preventDefault();
+       dispatch(register(email, password)); 
     }
     
     
     return <div classname="form">
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
+                <li>
+                    <h2>Sign-In</h2>
+                </li>
+                <li>
+                    {loading && <div>Loading...</div>}
+                    {error && <div>{error}</div>}
+                </li>
                 <li>
                 <label for="email">
                     Email
@@ -33,7 +45,7 @@ function SigninScreen(props) {
                 </input>
                 </li>
              <li>
-                 <label for="password">Password</label>
+                 <label htmlfor="password">Password</label>
                  <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
                  </input>
                 </li>
@@ -44,7 +56,7 @@ function SigninScreen(props) {
                     New to La-Drink?
                 </li>
                 <li>
-                    <Link to="/register" className="button-fullwin">Create your La-Drink account</Link>
+                    <Link to="/register" className="button secondary text-center">Create your La-Drink account</Link>
                 </li>
             </ul>
         </form>
