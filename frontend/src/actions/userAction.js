@@ -8,3 +8,5 @@ const signin = (email, password) => (dispatch) => {
         dispatch({ type: USER_SIGN_FAIL, payload: error.message });
     }
 }
+
+export { signin };
