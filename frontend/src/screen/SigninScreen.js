@@ -18,13 +18,17 @@ function SigninScreen(props) {
         };
     }, []);
     const submitHandler = (e) =>{
-       e.preventDefault(); 
+       e.preventDefault();
+       dispatch(signinin(email, password)); 
     }
     
     
     return <div classname="form">
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
+                <li>
+                    <h2>Sign-In</h2>
+                </li>
                 <li>
                 <label for="email">
                     Email
@@ -44,7 +48,7 @@ function SigninScreen(props) {
                     New to La-Drink?
                 </li>
                 <li>
-                    <Link to="/register" className="button-fullwin">Create your La-Drink account</Link>
+                    <Link to="/register" className="button secondary text-center">Create your La-Drink account</Link>
                 </li>
             </ul>
         </form>

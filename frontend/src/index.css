@@ -271,7 +271,7 @@ color: orange;
 }
 .button {
   padding: 1rem;
-  border: .1rem #808080 solid;
+  border: .1rem #f0f080 solid;
   cursor: pointer;
 }
 .button:hover {
@@ -279,6 +279,12 @@ color: orange;
 }
 .button.primary {
   background-color: #f50707;
+}
+.button.secondary{
+  background-color: #808080;
+}
+.text-center{
+  text-align: center;
 }
 
 /* Cart */
@@ -345,7 +351,18 @@ color: orange;
   flex-direction: column;
   width: 32rem;
   padding: 2rem;
-  border: 0.1rem #c0c0c0 solid;
+  border: .1rem #c0c0c0 solid;
   border-radius: 0.5rem;
   list-style-type: none;
+}
+.form-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+input{
+  padding: 1rem;
+  border: .1rem #c0c0c0 solid;
+  border-radius: .5rem;
 }
