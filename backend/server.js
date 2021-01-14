@@ -16,7 +16,7 @@ mongoose.connect(mongodbUrl, {
 }).catch(error => console.log(error.reason));
 
 const app =express();
-
+app.use(bodyParser.json());
 app.use("/api/users", userRoute);
 app.get("/api/products/:id", (req, res) => {
     const productId = req.params.id;
