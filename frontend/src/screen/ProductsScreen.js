@@ -25,7 +25,7 @@ function ProductsScreen(props) {
     }, [userInfo]);
     const submitHandler = (e) =>{
        e.preventDefault();
-       dispatch(saveProduct({name, price})); 
+       dispatch(saveProduct({name, price, image, brand, category, countInStock, description, rating, numReview})); 
     }
     
     
