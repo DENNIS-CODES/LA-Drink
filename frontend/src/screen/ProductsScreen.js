@@ -11,16 +11,14 @@ function ProductsScreen(props) {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (userInfo) {
-           props.history.push("/"); 
-        }
+
         return () => {
             //
         };
     }, [userInfo]);
     const submitHandler = (e) =>{
        e.preventDefault();
-       dispatch(signin(email, password)); 
+       dispatch(saveProduct({name, price})); 
     }
     
     
