@@ -46,7 +46,55 @@ function ProductsScreen(props) {
                 <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
                 </input>
                 </li>
-
+                <li>
+                <label for="price">
+                    Price
+                </label>
+                <input type="text" name="name" id="name" onCharge={(e) => setNPrice(e.target.value)}>
+                </input>
+                </li>
+                <li>
+                <label for="image">
+                    Image
+                </label>
+                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                </input>
+                </li>
+                <li>
+                <label for="brand">
+                    Brand
+                </label>
+                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                </input>
+                </li>
+                <li>
+                <label for="name">
+                    Category
+                </label>
+                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                </input>
+                </li>
+                <li>
+                <label for="name">
+                    Rating
+                </label>
+                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                </input>
+                </li>
+                <li>
+                <label for="name">
+                    Num Reviews
+                </label>
+                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                </input>
+                </li>
+                <li>
+                <label for="name">
+                    Description
+                </label>
+                <textarea name="description" id="name" onCharge={(e) => setDescription(e.target.value)}>
+                </textarea>
+                </li>
                 <li>
                     <button type="submit" className="button-primary">Create</button>
                 </li>
