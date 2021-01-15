@@ -4,10 +4,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import { signin } from '../actions/userAction';
 
 function ProductsScreen(props) {
-    const [email, setEmail] = useState('');
-    const [ password, setPassword] = useState('');
-    const userSignin = useSelector(state => state.userSignin);
-    const { loading, userInfo, error } = userSignin;
+    const [name, setName] = useState('');
+    const [price, setPrice] = useState('');
+    const productSave = useSelector(state => state.productSave);
+    const { loading: loadingSave, success: successSave, error: errorSave } = productSave;
     const dispatch = useDispatch();
 
     useEffect(() => {
