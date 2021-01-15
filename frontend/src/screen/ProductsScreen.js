@@ -26,32 +26,22 @@ function ProductsScreen(props) {
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
                 <li>
-                    <h2>Sign-In</h2>
+                    <h2>Create Product</h2>
                 </li>
                 <li>
                     {loading && <div>Loading...</div>}
                     {error && <div>{error}</div>}
                 </li>
                 <li>
-                <label for="email">
-                    Email
+                <label for="name">
+                    Name
                 </label>
-                <input type="email" name="email" id="email" onCharge={(e) => setEmail(e.target.value)}>
+                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
                 </input>
                 </li>
-             <li>
-                 <label htmlfor="password">Password</label>
-                 <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-                 </input>
-                </li>
+
                 <li>
-                    <button type="submit" className="button-primary">Signin</button>
-                </li>
-                <li>
-                    New to La-Drink?
-                </li>
-                <li>
-                    <Link to="/register" className="button secondary text-center">Create your La-Drink account</Link>
+                    <button type="submit" className="button-primary">Create</button>
                 </li>
             </ul>
         </form>
