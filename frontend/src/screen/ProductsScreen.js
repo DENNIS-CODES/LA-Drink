@@ -22,7 +22,7 @@ function ProductsScreen(props) {
         return () => {
             //
         };
-    }, [userInfo]);
+    }, []);
     const submitHandler = (e) =>{
        e.preventDefault();
        dispatch(saveProduct({name, price, image, brand, category, countInStock, description, rating, numReview})); 
@@ -36,8 +36,8 @@ function ProductsScreen(props) {
                     <h2>Create Product</h2>
                 </li>
                 <li>
-                    {loading && <div>Loading...</div>}
-                    {error && <div>{error}</div>}
+                    {loadingSave && <div>Loading...</div>}
+                    {errorSave && <div>{error}</div>}
                 </li>
                 <li>
                 <label for="name">
@@ -50,42 +50,42 @@ function ProductsScreen(props) {
                 <label for="price">
                     Price
                 </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setNPrice(e.target.value)}>
+                <input type="text" name="name" id="name" onCharge={(e) => setPrice(e.target.value)}>
                 </input>
                 </li>
                 <li>
                 <label for="image">
                     Image
                 </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                <input type="text" name="name" id="name" onCharge={(e) => setImage(e.target.value)}>
                 </input>
                 </li>
                 <li>
                 <label for="brand">
                     Brand
                 </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                <input type="text" name="name" id="name" onCharge={(e) => setBrand(e.target.value)}>
                 </input>
                 </li>
                 <li>
                 <label for="name">
                     Category
                 </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                <input type="text" name="name" id="name" onCharge={(e) => setCategory(e.target.value)}>
                 </input>
                 </li>
                 <li>
                 <label for="name">
                     Rating
                 </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                <input type="text" name="name" id="name" onCharge={(e) => setRating(e.target.value)}>
                 </input>
                 </li>
                 <li>
                 <label for="name">
                     Num Reviews
                 </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                <input type="text" name="name" id="name" onCharge={(e) => setNumReview(e.target.value)}>
                 </input>
                 </li>
                 <li>

@@ -15,12 +15,13 @@ const listProducts = () => async (dispatch) => {
    
 }
 
-const saveProduct = (product) = (dispatch) =>{
+const saveProduct = (product) = async (dispatch) =>{
     try {
         dispatch({type: PRODUCT_SAVE_REQUEST, payload: product });
-        const {userSignin:{ userInfo } } = getState();
-        const {data} = await Axios.post('api/products', product, {headers:{
-            'authorization': 'Bearer' + userInfo.token
+        const { userSignin: { userInfo } } = getState();
+        const { data } = await Axios.post('api/products', product, {
+            headers: {
+            'Authorization': 'Bearer' + userInfo.token
         }
     });
     dispatch({ type: PRODUCT_SAVE_SUCCESS, payload: data });
