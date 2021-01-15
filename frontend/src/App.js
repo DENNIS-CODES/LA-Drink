@@ -2,7 +2,7 @@ import './App.css';
 import {BrowserRouter, Route, Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
 import { useSelector } from 'react-redux';
-import ProductScreen from './screen/ProductScreen';
+import ProductScreen from './screen/ProductsScreen';
 import ShopScreen from './screen/ShopScreen';
 import SigninScreen from './screen/SigninScreen';
 import CartScreen from './screen/CartScreen';
