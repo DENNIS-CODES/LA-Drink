@@ -1,16 +1,19 @@
 import './App.css';
 import {BrowserRouter, Route, Link } from 'react-router-dom';
 import { MDBCol, MDBContainer, MDBRow, MDBFooter } from "mdbreact";
+import { useSelector } from 'react-redux';
 import ProductScreen from './screen/ProductScreen';
 import ShopScreen from './screen/ShopScreen';
 import SigninScreen from './screen/SigninScreen';
 import CartScreen from './screen/CartScreen';
+import RegisterScreen from './screen/RegisterScreen';
+import logo from './logo.png';
 
 
 
 function App() {
-  const userSignin = userSelector(state=>state.userSignin);
-  const {userInfo} = userSignin;
+  const userSignin = useSelector((state) =>state.userSignin);
+  const { userInfo } = userSignin;
   return (
     <BrowserRouter>
   <div className="App">
@@ -57,7 +60,6 @@ function App() {
       <Route path="/products/:_id" component={ProductScreen} />
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
-      <Route path="/vodka" component={vodkaScreen} />
       <Route path="/cart/:id?"  component={CartScreen} />
           </div>
  

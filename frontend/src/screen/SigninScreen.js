@@ -38,7 +38,7 @@ function SigninScreen(props) {
                 <label for="email">
                     Email
                 </label>
-                <input type="email" name="email" id="email" onCharge={(e) => setEamil(e.target.value)}>
+                <input type="email" name="email" id="email" onCharge={(e) => setEmail(e.target.value)}>
                 </input>
                 </li>
              <li>

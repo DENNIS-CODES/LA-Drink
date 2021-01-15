@@ -1,14 +1,13 @@
-import React, { useState, useEffect, useDispatch } from 'react';
-import {useSelector} from 'react-redux';
+  import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { register } from '../actions/userActions';
+import { register } from '../actions/userAction';
 
 function SigninScreen(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
-    const [ password, setPassword] = useState('');
-    const [ rePassword, setRePassword] = useState('');
+    const [password, setPassword] = useState('');
+    const [rePassword, setRePassword] = useState('');
     const userRegister = useSelector(state => state.userRegister);
     const { loading, userInfo, error } = userRegister;
     const dispatch = useDispatch();
@@ -23,7 +22,7 @@ function SigninScreen(props) {
     }, [userInfo]);
     const submitHandler = (e) =>{
        e.preventDefault();
-       dispatch(register(email, password)); 
+       dispatch(register(name, email, password)); 
     }
     
     
@@ -58,7 +57,7 @@ function SigninScreen(props) {
                 </li>
                 <li>
                  <label htmlfor="rePassword">Re-Enter Password</label>
-                 <input type="password" id="password" name="password" onChange={(e) => setRePassword(e.target.value)}>
+                 <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
                  </input>
                 </li>
                 <li>
