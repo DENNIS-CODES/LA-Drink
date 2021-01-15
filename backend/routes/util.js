@@ -28,6 +28,12 @@ const isAuth = (req, res, next) => {
     return response.status(401).send({ msg: "token is not supplied." })
 }
  
+const isAdmin = (req, res, next) => {
+    if(req.user && req.user.isAdmin) {
+        return next();
+    }
+    return res.status(401).send({ msg: 'Admin Token is not valid.'})
+}
 export {
     getToken, isAuth, isAdmin   
 }
