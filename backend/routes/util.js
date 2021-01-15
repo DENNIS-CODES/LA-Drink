@@ -1,3 +1,4 @@
+import { response } from 'express';
 import jwt from 'jsonwebtoken';
 import config from './config';
 const getToken = (user) => {
@@ -19,8 +20,12 @@ const isAuth = (req, res, next) => {
             if (err) {
                 return res.status(401).send({ msg: 'invalid Token' });
             }
-        })
+            req.user = token;
+            next();
+            return
+        });
     }
+    return response.status(401).send({ msg: "token is not supplied." })
 }
  
 export {
