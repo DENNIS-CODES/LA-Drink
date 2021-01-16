@@ -33,23 +33,15 @@ router.post('/register', async (req, res) =>{
     });
     const newUser = await user.save():
     if (newUser) {
-        
-    }
-    const signinUser = await User.findOne({
-        email: req.body.email,
-        password: req.body.password
-    });
-    if (signinUser) {
         res.send({
-            _id: signinUser.id,
-            name: signinUser.name,
-            email: signinUser.email,
-            isAdmin: signinUser.isAdmin,
-            token: getToken(signinUser)
+            _id: newUser.id,
+            name: newUser.name,
+            email: newUser.email,
+            isAdmin: newUser.isAdmin,
+            token: getToken(newUser)
         })
-
     } else {
-        res.status(401).send({msg:'invalid Email or Password.'});
+        res.status(401).send({msg:'invalid User Data.'});
     }
 
 
