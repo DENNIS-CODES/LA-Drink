@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { signin } from '../actions/userAction';
 
 function ProductsScreen(props) {
     const [name, setName] = useState('');
@@ -25,7 +23,7 @@ function ProductsScreen(props) {
     }, []);
     const submitHandler = (e) =>{
        e.preventDefault();
-       dispatch(saveProduct({name, price, image, brand, category, countInStock, description, rating, numReview})); 
+       dispatch(saveProduct({ name, price, image, brand, category, countInStock, description, rating, numReview })); 
     }
     
     
