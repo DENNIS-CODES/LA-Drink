@@ -67,6 +67,13 @@ function ProductsScreen(props) {
                 </input>
                 </li>
                 <li>
+                <label for="brand">
+                    Count in Stock 
+                </label>
+                <input type="text" name="name" id="name" onCharge={(e) => setCountInStock(e.target.value)}>
+                </input>
+                </li>
+                <li>
                 <label for="name">
                     Category
                 </label>
