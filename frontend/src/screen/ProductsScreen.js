@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { saveProduct } from '../actions/productActions';
 
 function ProductsScreen(props) {
     const [name, setName] = useState('');
