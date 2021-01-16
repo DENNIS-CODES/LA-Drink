@@ -5,6 +5,7 @@ import config from './config';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import userRoute from './routes/userRoute';
+import productRoute from './routes/userRoute';
 
 dotenv.config();
 
@@ -18,14 +19,15 @@ mongoose.connect(mongodbUrl, {
 const app =express();
 app.use(bodyParser.json());
 app.use("/api/users", userRoute);
+app.use("/api/products", productRoute);
 app.get("/api/products/:id", (req, res) => {
-    const productId = req.params.id;
-    const product = data.products.find(x=>x._id === productId);
-    if(product)
-    res.send(product);
-    else
-    res.status(404).send({ msg: "Product Not Found." })
-});
+//     const productId = req.params.id;
+//     const product = data.products.find(x=>x._id === productId);
+//     if(product)
+//     res.send(product);
+//     else
+//     res.status(404).send({ msg: "Product Not Found." })
+// });
 
 app.listen(config.PORT, () => { 
     console.log("server started at http://localhost:5000") 
