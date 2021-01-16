@@ -30,7 +30,7 @@ function SigninScreen(props) {
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
                 <li>
-                    <h2>Sign-In</h2>
+                    <h2>Create Account</h2>
                 </li>
                 <li>
                     {loading && <div>Loading...</div>}
@@ -44,7 +44,7 @@ function SigninScreen(props) {
                 </input>
                 </li>
                 <li>
-                <label for="email">
+                <label htmlfor="email">
                     Email
                 </label>
                 <input type="email" name="email" id="email" onCharge={(e) => setEmail(e.target.value)}>
@@ -57,7 +57,7 @@ function SigninScreen(props) {
                 </li>
                 <li>
                  <label htmlfor="rePassword">Re-Enter Password</label>
-                 <input type="password" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
+                 <input type="rePassword" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
                  </input>
                 </li>
                 <li>
