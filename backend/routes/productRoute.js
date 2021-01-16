@@ -1,6 +1,5 @@
 import express from 'express';
 import Product from '../models/productModel';
-import { getToken } from './util';
 
 const router = express.Router();
 
@@ -22,9 +21,12 @@ router.post("/", async(req, res) =>{
         numReviews: req.body.numReviews, 
     });
     const newProduct = await product.save();
-    if(newProduct){
-       return res.status(201).send({ message:'New product Created', data: newProduct });
+    if (newProduct) {
+       return res
+       .status(201)
+       .send({ message:'New product Created', data: newProduct });
     }
-    return res.status(500).send({ message: 'Error in Creating Product.' })
-})
+    return res.status(500).send({ message: 'Error in Creating Product.' });
+});
+
 export default router;

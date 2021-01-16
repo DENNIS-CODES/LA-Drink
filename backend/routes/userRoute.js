@@ -31,7 +31,7 @@ router.post('/register', async (req, res) =>{
         email: req.body.email,
         password: req.body.password
     });
-    const newUser = await user.save():
+    const newUser = await user.save();
     if (newUser) {
         res.send({
             _id: newUser.id,
