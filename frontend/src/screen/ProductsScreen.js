@@ -4,6 +4,7 @@ import { saveProduct } from '../actions/productActions';
 
 function ProductsScreen(props) {
     const [modalVisible, setModalVisible] = useState(false);
+    const [id, setid] = useState('');
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
@@ -15,7 +16,7 @@ function ProductsScreen(props) {
     const [numReview, setNumReview] = useState('');
     const productSave = useSelector(state => state.productSave);
     const productList = useSelector(state => state.productList);
-    const { loading, products, erroe } = productList;
+    const { loading, products, error } = productList;
 
     const { loading: loadingSave, success: successSave, error: errorSave } = productSave;
     const dispatch = useDispatch();
@@ -28,13 +29,13 @@ function ProductsScreen(props) {
     }, []);
 
     const openModal = (product) =>{
+        setName(product._id);
         setName(product.name);
-        setName(product.name);
-        setName(product.name);
-        setName(product.name);
-        setName(product.name);
-        setName(product.name);
-        setName(product.name);
+        setName(product.price);
+        setName(product.image);
+        setName(product.brand);
+        setName(product.category);
+        setName(product.countInStock);
         setName(product.name);
         setName(product.name);
     }
@@ -47,7 +48,7 @@ function ProductsScreen(props) {
     return <div className="content content-margined">
         <div className="product-header">
             <h3>Products</h3>
-            <button>Create Product</button>
+            <button onClick={() => openModal({})}>Create Product</button>
         </div>
         <div className="product-list">
             <tabel>
@@ -77,85 +78,7 @@ function ProductsScreen(props) {
             </tabel>
         
     
-    <div classname="form">
-        <form onSubmit={submitHandler} >
-            <ul className="form-conatiner">
-                <li>
-                    <h2>Create Product</h2>
-                </li>
-                <li>
-                    {loadingSave && <div>Loading...</div>}
-                    {errorSave && <div>{errorSave}</div>}
-                </li>
-                <li>
-                <label for="name">
-                    Name
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="price">
-                    Price
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setPrice(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="image">
-                    Image
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setImage(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="brand">
-                    Brand
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setBrand(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="brand">
-                    Count in Stock 
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setCountInStock(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="name">
-                    Category
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setCategory(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="name">
-                    Rating
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setRating(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="name">
-                    Num Reviews
-                </label>
-                <input type="text" name="name" id="name" onCharge={(e) => setNumReview(e.target.value)}>
-                </input>
-                </li>
-                <li>
-                <label for="name">
-                    Description
-                </label>
-                <textarea name="description" id="name" onCharge={(e) => setDescription(e.target.value)}>
-                </textarea>
-                </li>
-                <li>
-                    <button type="submit" className="button-primary">Create</button>
-                </li>
-            </ul>
-        </form>
-    </div>
+  
 </div>
     </div>
 }
