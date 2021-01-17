@@ -1,6 +1,7 @@
 {
   "name": "la-drink-1",
   "version": "1.0.0",
+  "type": "module",
   "description": "An Ecommerce Website created using React",
   "main": "script.js",
   "dependencies": {

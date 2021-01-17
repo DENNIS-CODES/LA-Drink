@@ -1,5 +1,5 @@
 import express from 'express';
-import data from './data';
+import data from '../data';
 import dotenv from "dotenv";
 import config from './config';
 import mongoose from 'mongoose';
@@ -27,8 +27,8 @@ app.get("/api/products/:id", (req, res) => {
 //     res.send(product);
 //     else
 //     res.status(404).send({ msg: "Product Not Found." })
-// });
-
+// 
+});
 app.listen(config.PORT, () => { 
-    console.log("server started at http://localhost:5000") 
+    console.log('server started at http://localhost:5000'); 
 });
