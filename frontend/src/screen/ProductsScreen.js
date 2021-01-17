@@ -13,11 +13,14 @@ function ProductsScreen(props) {
     const [rating, setRating] = useState('');
     const [numReview, setNumReview] = useState('');
     const productSave = useSelector(state => state.productSave);
+    const productList = useSelector(state => state.productList);
+    const { loading, products, erroe } = productList;
+
     const { loading: loadingSave, success: successSave, error: errorSave } = productSave;
     const dispatch = useDispatch();
 
     useEffect(() => {
-
+        dispatch(listProducts());
         return () => {
             //
         };
@@ -28,7 +31,28 @@ function ProductsScreen(props) {
     }
     
     
-    return <div classname="form">
+    return <div className="content content-margined">
+        <div className="product-header">
+            <h3>Products</h3>
+            <button>Create Product</button>
+        </div>
+        <div className="product-list">
+            <tabel>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Category</th>
+                        <th>Brand</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+            </tabel>
+        </div>
+    </div>
+    
+    <div classname="form">
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
                 <li>
