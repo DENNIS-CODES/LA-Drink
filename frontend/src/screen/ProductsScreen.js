@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { saveProduct } from '../actions/productActions';
 
 function ProductsScreen(props) {
+    const [modalVisible, setModalVisible] = useState(false);
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
     const [image, setImage] = useState('');
@@ -25,6 +26,18 @@ function ProductsScreen(props) {
             //
         };
     }, []);
+
+    const openModal = (product) =>{
+        setName(product.name);
+        setName(product.name);
+        setName(product.name);
+        setName(product.name);
+        setName(product.name);
+        setName(product.name);
+        setName(product.name);
+        setName(product.name);
+        setName(product.name);
+    }
     const submitHandler = (e) =>{
        e.preventDefault();
        dispatch(saveProduct({ name, price, image, brand, category, countInStock, description, rating, numReview })); 
@@ -51,10 +64,10 @@ function ProductsScreen(props) {
                 <tbody>
                     {products.map(product => (<tr>
                         <td>{product._id}</td>
-                        <th>{product.name}</th>
-                        <th>{product.price}</th>
-                        <th>{product.category}</th>
-                        <th>{product.brand}</th>
+                        <td>{product.name}</td>
+                        <td>{product.price}</td>
+                        <td>{product.category}</td>
+                        <td>{product.brand}</td>
                             <th>
                                 <button>Edit</button>
                                 <button>Delete</button>
