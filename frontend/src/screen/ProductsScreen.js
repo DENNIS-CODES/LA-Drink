@@ -48,9 +48,21 @@ function ProductsScreen(props) {
                         <th>Action</th>
                     </tr>
                 </thead>
+                <tbody>
+                    {products.map(product => (<tr>
+                        <td>{product._id}</td>
+                        <th>{product.name}</th>
+                        <th>{product.price}</th>
+                        <th>{product.category}</th>
+                        <th>{product.brand}</th>
+                            <th>
+                                <button>Edit</button>
+                                <button>Delete</button>
+                            </th>
+                    </tr>))}
+                </tbody>
             </tabel>
-        </div>
-    </div>
+        
     
     <div classname="form">
         <form onSubmit={submitHandler} >
@@ -131,6 +143,7 @@ function ProductsScreen(props) {
             </ul>
         </form>
     </div>
-
+</div>
+    </div>
 }
 export default ProductsScreen;
