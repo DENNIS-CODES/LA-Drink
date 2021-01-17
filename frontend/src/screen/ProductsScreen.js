@@ -29,6 +29,7 @@ function ProductsScreen(props) {
     }, []);
 
     const openModal = (product) =>{
+        setModalVisible(true);
         setName(product._id);
         setName(product.name);
         setName(product.price);
@@ -70,7 +71,7 @@ function ProductsScreen(props) {
                         <td>{product.category}</td>
                         <td>{product.brand}</td>
                             <th>
-                                <button>Edit</button>
+                                <button onClick={() => openModal(product)}>Edit</button>
                                 <button>Delete</button>
                             </th>
                     </tr>))}
