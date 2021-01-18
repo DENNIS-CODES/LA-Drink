@@ -10,7 +10,7 @@ router.get("/", async (req, res) =>{
 
 router.post("/:id", async(req, res) =>{
     const productId = req.params.id;
-    const product = await product.findOne({_id: productId});
+    const product = await product.findById(productId);
     if(product) {
         product.name = req.body.name;
         product.price = req.body.price;
