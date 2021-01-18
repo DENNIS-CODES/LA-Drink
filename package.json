@@ -19,6 +19,7 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
+    "dev": "concurrently \"npm run client\" \"npm run server\"",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^7.1.0",
