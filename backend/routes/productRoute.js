@@ -33,14 +33,13 @@ router.post("/:id", async(req, res) =>{
     const productId = req.params.id;
     const product = await product.findOne({_id: productId});
     if(product) {
-       product.name = req.body.name,
-       product.name = req.body.name,
-       product.name = req.body.name,
-       product.name = req.body.name,
-       product.name = req.body.name,
-       product.name = req.body.name,
-       product.name = req.body.name,
-       product.name = req.body.name,
+        product.name = req.body.name;
+        product.price = req.body.price;
+        product.image = req.body.image;
+        product.brand = req.body.brand;
+        product.category = req.body.category;
+        product.countInStock = req.body.countInStock;
+        product.description = req.body.description;
         const product = new Product({
         name: req.body.name,
         price: req.body.price,
