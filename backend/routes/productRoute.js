@@ -40,15 +40,14 @@ router.post("/:id", async(req, res) =>{
         product.category = req.body.category;
         product.countInStock = req.body.countInStock;
         product.description = req.body.description;
+    const updatedProduct = await product.save();
+    if (updatedProduct) {
+      return res
+        .status(200)
+        .send({ message: 'Product Updated', data: updatedProduct });
     }
-    
-    const newProduct = await product.save();
-    if (newProduct) {
-       return res
-       .status(201)
-       .send({ message:'New product Created', data: newProduct });
-    }
-    return res.status(500).send({ message: 'Error in Creating Product.' });
+  }
+  return res.status(500).send({ message: ' Error in Updating Product.' });
 });
 
 export default router;
