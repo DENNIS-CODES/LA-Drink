@@ -29,4 +29,25 @@ router.post("/", async(req, res) =>{
     return res.status(500).send({ message: 'Error in Creating Product.' });
 });
 
+router.post("/", async(req, res) =>{
+    const product = new Product({
+        name: req.body.name,
+        price: req.body.price,
+        image: req.body.image,
+        brand: req.body.brand,
+        category: req.body.icategory,
+        countInStock: req.body.countInStock,
+        description: req.body.description,
+        rating: req.body.rating,
+        numReviews: req.body.numReviews, 
+    });
+    const newProduct = await product.save();
+    if (newProduct) {
+       return res
+       .status(201)
+       .send({ message:'New product Created', data: newProduct });
+    }
+    return res.status(500).send({ message: 'Error in Creating Product.' });
+});
+
 export default router;
