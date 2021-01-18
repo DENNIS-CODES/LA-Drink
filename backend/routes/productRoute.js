@@ -40,17 +40,6 @@ router.post("/:id", async(req, res) =>{
         product.category = req.body.category;
         product.countInStock = req.body.countInStock;
         product.description = req.body.description;
-        const product = new Product({
-        name: req.body.name,
-        price: req.body.price,
-        image: req.body.image,
-        brand: req.body.brand,
-        category: req.body.icategory,
-        countInStock: req.body.countInStock,
-        description: req.body.description,
-        rating: req.body.rating,
-        numReviews: req.body.numReviews, 
-    }); 
     }
     
     const newProduct = await product.save();
