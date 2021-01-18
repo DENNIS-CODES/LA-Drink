@@ -64,5 +64,11 @@ const deleteProdcut = (productId) => async (dispatch, getState) => {
           Authorization: 'Bearer ' + userInfo.token,
         },
       });
+      dispatch({ type: PRODUCT_DELETE_SUCCESS, payload: data, success: true });
+    } catch (error) {
+      dispatch({ type: PRODUCT_DELETE_FAIL, payload: error.message });
+    }
+  };
+  
 
 export { listProducts, detailsProduct, saveProduct };
