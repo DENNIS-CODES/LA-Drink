@@ -53,15 +53,16 @@ const detailsProduct = (productId) => async (dispatch) =>  {
     }
 }
 
-
-const detailsProduct = (productId) => async (dispatch) =>  {
+const deleteProdcut = (productId) => async (dispatch, getState) => {
     try {
-        dispatch({type: PRODUCT_DETAILS_REQUEST, payload: productId});
-        const { data } = await Axios.get("/api/products/" + productId);
-        dispatch({ type: PRODUCT_DETAILS_SUCCESS, payload: data });
-    } catch (error) {
-        dispatch({ type: PRODUCT_DETAILS_FAIL, payload: error.message });
-    }
-}
+      const {
+        userSignin: { userInfo },
+      } = getState();
+      dispatch({ type: PRODUCT_DELETE_REQUEST, payload: productId });
+      const { data } = await axios.delete('/api/products/' + productId, {
+        headers: {
+          Authorization: 'Bearer ' + userInfo.token,
+        },
+      });
 
 export { listProducts, detailsProduct, saveProduct };
