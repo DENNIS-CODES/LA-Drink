@@ -1,5 +1,6 @@
 import express from 'express';
 import Product from '../models/productModel';
+import { isAuth, isAdmin } from '../util';
 
 const router = express.Router();
 
@@ -8,7 +9,7 @@ router.get("/", async (req, res) =>{
     res.send(products);
 });
 
-router.post("/:id", async(req, res) =>{
+router.post("/:id", isAuth, isAdmin, async (req, res) =>{
     const productId = req.params.id;
     const product = await product.findById(productId);
     if(product) {
@@ -60,7 +61,5 @@ router.post('/', isAuth, isAdmin, async (req, res) => {
   }
   return res.status(500).send({ message: ' Error in Creating Product.' });
 });
-
-export default router;
 
 export default router;
