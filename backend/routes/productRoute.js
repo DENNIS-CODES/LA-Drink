@@ -29,4 +29,15 @@ router.post("/:id", async(req, res) =>{
   return res.status(500).send({ message: ' Error in Updating Product.' });
 });
 
+router.delete("/id", async(req, res) => 
+{
+  const deleteProduct = await Product.findById(req.params.id);
+  if(deletedProduct) {
+    await deleteProduct.remove();
+    res.send({message: "product Deleted"});
+  } else {
+     res.send("Error in Deletion");
+  }
+});
+
 export default router;
