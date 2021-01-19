@@ -48,3 +48,18 @@ const listOrders = () => async (dispatch, getState) => {
   }
 }
 
+const detailsOrder = (orderId) => async (dispatch, getState) => {
+  try {
+    dispatch({ type: ORDER_DETAILS_REQUEST, payload: orderId });
+    const { userSignin: { userInfo } } = getState();
+    const { data } = await Axios.get("/api/orders/" + orderId, {
+      headers:
+        { Authorization: 'Bearer ' + userInfo.token }
+    });
+    dispatch({ type: ORDER_DETAILS_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({ type: ORDER_DETAILS_FAIL, payload: error.message });
+  }
+}
+
+export { createOrder, detailsOrder, listMyOrders, listOrders };
