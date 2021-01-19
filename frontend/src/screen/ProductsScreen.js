@@ -1,11 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
-import {
-  saveProduct,
-  listProducts,
-  deleteProdcut,
-} from '../actions/productActions';
+import { saveProduct, listProducts, deleteProdcut } from '../actions/productActions';
 
 function ProductsScreen(props) {
   const [modalVisible, setModalVisible] = useState(false);
