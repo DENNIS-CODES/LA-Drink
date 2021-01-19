@@ -19,3 +19,32 @@ const createOrder = (order) => async (dispatch, getState) => {
   }
 }
 
+const listMyOrders = () => async (dispatch, getState) => {
+  try {
+    dispatch({ type: MY_ORDER_LIST_REQUEST });
+    const { userSignin: { userInfo } } = getState();
+    const { data } = await Axios.get("/api/orders/mine", {
+      headers:
+        { Authorization: 'Bearer ' + userInfo.token }
+    });
+    dispatch({ type: MY_ORDER_LIST_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({ type: MY_ORDER_LIST_FAIL, payload: error.message });
+  }
+}
+
+const listOrders = () => async (dispatch, getState) => {
+
+  try {
+    dispatch({ type: ORDER_LIST_REQUEST });
+    const { userSignin: { userInfo } } = getState();
+    const { data } = await Axios.get("/api/orders", {
+      headers:
+        { Authorization: 'Bearer ' + userInfo.token }
+    });
+    dispatch({ type: ORDER_LIST_SUCCESS, payload: data })
+  } catch (error) {
+    dispatch({ type: ORDER_LIST_FAIL, payload: error.message });
+  }
+}
+
