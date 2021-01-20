@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { register } from '../actions/userAction';
 
-function SigninScreen(props) {
+function ShippingScreen(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -74,4 +74,4 @@ function SigninScreen(props) {
     </div>
 
 }
-export default SigninScreen;
+export default ShippingScreen;

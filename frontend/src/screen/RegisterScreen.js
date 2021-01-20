@@ -1,9 +1,9 @@
-  import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import { register } from '../actions/userAction';
+import { register } from '../actions/userActions';
 
-function SigninScreen(props) {
+function RegisterScreen(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -74,4 +74,4 @@ function SigninScreen(props) {
     </div>
 
 }
-export default SigninScreen;
+export default RegisterScreen;
