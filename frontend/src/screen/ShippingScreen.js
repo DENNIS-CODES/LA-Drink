@@ -30,44 +30,25 @@ function ShippingScreen(props) {
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
                 <li>
-                    <h2>Create Account</h2>
+                    <h2>hipping</h2>
                 </li>
                 <li>
-                    {loading && <div>Loading...</div>}
-                    {error && <div>{error}</div>}
-                </li>
-                <li>
-                <label htmlfor="name">
-                    Name
+                <label htmlfor="address">
+                    Address
                 </label>
-                <input type="name" name="name" id="name" onCharge={(e) => setName(e.target.value)}>
+                <input type="text" name="address" id="address" onCharge={(e) => setAddress(e.target.value)}>
                 </input>
                 </li>
                 <li>
-                <label htmlfor="email">
-                    Email
+                <label htmlfor="address">
+                    Address
                 </label>
-                <input type="email" name="email" id="email" onCharge={(e) => setEmail(e.target.value)}>
+                <input type="text" name="address" id="address" onCharge={(e) => setAddress(e.target.value)}>
                 </input>
                 </li>
-             <li>
-                 <label htmlfor="password">Password</label>
-                 <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-                 </input>
-                </li>
+            
                 <li>
-                 <label htmlfor="rePassword">Re-Enter Password</label>
-                 <input type="rePassword" id="rePassword" name="rePassword" onChange={(e) => setRePassword(e.target.value)}>
-                 </input>
-                </li>
-                <li>
-                    <button type="submit" className="button-primary">Signin</button>
-                </li>
-                <li>
-                    Already have an account? <Link to="/signin">Sign-in</Link> 
-                </li>
-                <li>
-                    <Link to="/register" className="button secondary text-center">Create your La-Drink account</Link>
+                    <button type="submit" className="button-primary">Continue</button>
                 </li>
             </ul>
         </form>
