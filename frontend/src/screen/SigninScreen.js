@@ -1,29 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { signin } from '../actions/userAction';
 
 function SigninScreen(props) {
     const [email, setEmail] = useState('');
-    const [ password, setPassword] = useState('');
+    const [password, setPassword] = useState('');
     const userSignin = useSelector(state => state.userSignin);
     const { loading, userInfo, error } = userSignin;
     const dispatch = useDispatch();
-
+    const redirect = props.location.search ? props.location.search.split("=")[1] : '/';
     useEffect(() => {
         if (userInfo) {
-           props.history.push("/"); 
+            props.history.push(redirect);
         }
         return () => {
             //
         };
     }, [userInfo]);
-    const submitHandler = (e) =>{
-       e.preventDefault();
-       dispatch(signin(email, password)); 
+    const submitHandler = (e) => {
+        e.preventDefault();
+        dispatch(signin(email, password));
     }
-    
-    
+
+
     return <div classname="form">
         <form onSubmit={submitHandler} >
             <ul className="form-conatiner">
@@ -35,16 +35,16 @@ function SigninScreen(props) {
                     {error && <div>{error}</div>}
                 </li>
                 <li>
-                <label for="email">
-                    Email
+                    <label htmlfor="email">
+                        Email
                 </label>
-                <input type="email" name="email" id="email" onCharge={(e) => setEmail(e.target.value)}>
-                </input>
+                    <input type="email" name="email" id="email" onCharge={(e) => setEmail(e.target.value)}>
+                    </input>
                 </li>
-             <li>
-                 <label htmlfor="password">Password</label>
-                 <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
-                 </input>
+                <li>
+                    <label htmlfor="password">Password</label>
+                    <input type="password" id="password" name="password" onChange={(e) => setPassword(e.target.value)}>
+                    </input>
                 </li>
                 <li>
                     <button type="submit" className="button-primary">Signin</button>
@@ -53,7 +53,7 @@ function SigninScreen(props) {
                     New to La-Drink?
                 </li>
                 <li>
-                    <Link to="/register" className="button secondary text-center">Create your La-Drink account</Link>
+                    <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
                 </li>
             </ul>
         </form>
