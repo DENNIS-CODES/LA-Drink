@@ -68,11 +68,6 @@ function RegisterScreen(props) {
                 <li>
                     Already have an account? <Link to="/signin">Sign-in</Link> 
                 </li>
-                <li>
-          Already have an account?
-          <Link to={redirect === "/" ? "signin" : "signin?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
-
-        </li>
 
       </ul>
     </form>

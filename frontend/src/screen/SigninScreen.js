@@ -53,7 +53,7 @@ function SigninScreen(props) {
                     New to La-Drink?
                 </li>
                 <li>
-                    <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your amazona account</Link>
+                    <Link to={redirect === "/" ? "register" : "register?redirect=" + redirect} className="button secondary text-center" >Create your La-drink account</Link>
                 </li>
             </ul>
         </form>
