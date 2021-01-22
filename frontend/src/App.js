@@ -61,6 +61,7 @@ function App() {
       <Route path= "/products"  component={ProductsScreen}></Route>
       <Route path= "/register"  component={RegisterScreen}></Route>
       <Route path="/shipping" components={ShippingScreen}></Route>
+      <Route path="/payment" components={PaymentScreen}></Route>
       <Route path="/products/:_id" component={ProductScreen}></Route>
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
