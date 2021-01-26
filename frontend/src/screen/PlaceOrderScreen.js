@@ -26,7 +26,16 @@ function PlaceOrderScreen(props) {
   return <div>
     <CheckoutStep step1 step2 step3 step4 ></CheckoutStep>
   <div className="placeoder">
-    <div className="place-order-info">
+    <div className="placeorder-info">
+      <div>
+        <h3>
+          Shipping
+        </h3>
+        <div>
+          {cart.shipping.address}, {cart.shipping.city},
+          {cart.shipping.postalCode}, {cart.shipping.country},
+        </div>
+      </div>
       <ul className="cart-list-container">
         <li>
           <h3>
