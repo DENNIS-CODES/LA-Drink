@@ -2,14 +2,13 @@ import React, { useEffect } from 'react';
 import { addToCart, removeFromCart } from '../actions/cartActions';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-function CartScreen(props) {
+function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
 
   const { cartItems } = cart;
 
-  const productId = props.match.params.id;
-  const qty = props.location.search ? Number(props.location.search.split("=")[1]) : 1;
+ 
   const dispatch = useDispatch();
   const removeFromCartHandler = (productId) => {
     dispatch(removeFromCart(productId));
@@ -24,8 +23,11 @@ function CartScreen(props) {
     props.history.push("/signin?redirect=shipping");
   }
 
-  return <div className="cart">
-    <div className="cart-list">
+  return<div>
+    <CheckoutStep step1 step2 step3 step4 ></CheckoutStep>
+  </div>
+  <div className="placeoder">
+    <div className="place-order-info">
       <ul className="cart-list-container">
         <li>
           <h3>
@@ -74,7 +76,7 @@ function CartScreen(props) {
       </ul>
 
     </div>
-    <div className="cart-action">
+    <div className="place-order-action">
       <h3>
         Subtotal ( {cartItems.reduce((a, c) => a + c.qty, 0)} items)
         :
@@ -89,4 +91,4 @@ function CartScreen(props) {
   </div>
 }
 
-export default CartScreen;
+export default PlaceOrderScreen;
