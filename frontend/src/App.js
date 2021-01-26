@@ -10,6 +10,7 @@ import RegisterScreen from './screen/RegisterScreen';
 import ProductsScreen from './screen/ProductsScreen';
 import logo from './logo.png';
 import ShippingScreen from './screen/ShippingScreen';
+import PaymentScreen from './screen/PaymentScreen';
 
 
 
