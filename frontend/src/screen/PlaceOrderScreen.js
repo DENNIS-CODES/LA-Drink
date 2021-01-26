@@ -6,7 +6,14 @@ function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
 
-  const { cartItems } = cart;
+  const { cartItems, shipping, payment } = cart;
+  if (!shipping) {
+    props.location.push("/shipping");
+  }
+
+  if (!payment) {
+    props.location.push("/payment");
+  }
 
  
   const dispatch = useDispatch();
@@ -43,9 +50,7 @@ function PlaceOrderScreen(props) {
           </div>
       </div>
       <div>
-        
-      </div>
-      <ul className="cart-list-container">
+       <ul className="cart-list-container">
         <li>
           <h3>
             Shopping Cart
@@ -90,7 +95,9 @@ function PlaceOrderScreen(props) {
               </li>
             )
         }
-      </ul>
+      </ul> 
+      </div>
+      
 
     </div>
     <div className="place-order-action">

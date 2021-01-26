@@ -11,6 +11,7 @@ import ProductsScreen from './screen/ProductsScreen';
 import logo from './logo.png';
 import ShippingScreen from './screen/ShippingScreen';
 import PaymentScreen from './screen/PaymentScreen';
+import PlaceOrderScreen from './screen/PlaceOderScreen';
 
 
 
@@ -63,6 +64,7 @@ function App() {
       <Route path= "/register"  component={RegisterScreen}></Route>
       <Route path="/shipping" components={ShippingScreen}></Route>
       <Route path="/payment" components={PaymentScreen}></Route>
+      <Route path="/placeorder" components={PlaceOrderScreen}></Route>
       <Route path="/products/:_id" component={ProductScreen}></Route>
       <Route path="/ShopScreen" exact={true} component={ShopScreen} />
       <Route path="/" exact={true} component={ShopScreen} />
