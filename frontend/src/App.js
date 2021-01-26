@@ -11,7 +11,7 @@ import ProductsScreen from './screen/ProductsScreen';
 import logo from './logo.png';
 import ShippingScreen from './screen/ShippingScreen';
 import PaymentScreen from './screen/PaymentScreen';
-import PlaceOrderScreen from './screen/PlaceOderScreen';
+import PlaceOrderScreen from './screen/PlaceOrderScreen';
 
 
 
