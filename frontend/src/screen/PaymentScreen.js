@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { savePayment } from '../actions/cartActions';
-import CheckoutSteps from '../components/CheckoutStep'
+import CheckoutSteps from '../components/CheckoutSteps'
 
 function PaymentScreen(props) {
   const [paymentMethod, setPaymentMethod] = useState('');

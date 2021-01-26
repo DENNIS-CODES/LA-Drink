@@ -1,5 +1,5 @@
 import React from 'react';
-function CheckoutStep(props) {
+function CheckoutSteps(props) {
     return <div className="checkout-steps">
         <div className={props.step1 ? 'active' : ''} >Signin</div>
         <div className={props.step1 ? 'active' : ''} >Shipping</div>
@@ -9,4 +9,4 @@ function CheckoutStep(props) {
 
 }
 
-export default CheckoutStep;
+export default CheckoutSteps;
