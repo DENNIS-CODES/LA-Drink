@@ -8,7 +8,7 @@ function PlaceOrderScreen(props) {
 
   const { cartItems, shipping, payment } = cart;
   if (!shipping) {
-    props.location.push("/shipping");
+    props.history.push("/shipping");
   }
 
   if (!payment) {
@@ -17,13 +17,10 @@ function PlaceOrderScreen(props) {
 
  
   const dispatch = useDispatch();
-  const removeFromCartHandler = (productId) => {
-    dispatch(removeFromCart(productId));
+  
   }
   useEffect(() => {
-    if (productId) {
-      dispatch(addToCart(productId, qty));
-    }
+
   }, []);
 
   const checkoutHandler = () => {
@@ -78,15 +75,9 @@ function PlaceOrderScreen(props) {
 
                   </div>
                   <div>
-                    Qty:
-                  <select value={item.qty} onChange={(e) => dispatch(addToCart(item.product, e.target.value))}>
-                      {[...Array(item.countInStock).keys()].map(x =>
-                        <option key={x + 1} value={x + 1}>{x + 1}</option>
-                      )}
-                    </select>
-                    <button type="button" className="button" onClick={() => removeFromCartHandler(item.product)} >
-                      Delete
-                    </button>
+                    Qty: {item.qty}
+                 
+
                   </div>
                 </div>
                 <div className="cart-price">
