@@ -23,9 +23,8 @@ function PlaceOrderScreen(props) {
     props.history.push("/signin?redirect=shipping");
   }
 
-  return<div>
+  return <div>
     <CheckoutStep step1 step2 step3 step4 ></CheckoutStep>
-  </div>
   <div className="placeoder">
     <div className="place-order-info">
       <ul className="cart-list-container">
@@ -88,6 +87,7 @@ function PlaceOrderScreen(props) {
 
     </div>
 
+  </div>
   </div>
 }
 
