@@ -36,6 +36,15 @@ function PlaceOrderScreen(props) {
           {cart.shipping.postalCode}, {cart.shipping.country},
         </div>
       </div>
+      <div>
+        <h3>Payment</h3>
+        <div>
+          Payment Method: {cart.paymet.paymentMethod}
+          </div>
+      </div>
+      <div>
+        
+      </div>
       <ul className="cart-list-container">
         <li>
           <h3>
