@@ -1,14 +1,9 @@
 {
   "name": "la-drink-1",
-  "type": "module",
   "version": "1.0.0",
   "description": "An Ecommerce Website created using React",
   "main": "script.js",
   "dependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.11",
     "aws-sdk": "^2.832.0",
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",
@@ -23,7 +18,10 @@
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
-    "dev": "concurrently \"npm run client\" \"npm run server\"",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
     "eslint": "^7.18.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^7.1.0",
