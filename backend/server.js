@@ -22,7 +22,7 @@ mongoose
   app.use('/api/uploads', uploadRoute);
   app.use('/api/users', userRoute);
   app.use('/api/products', productRoute);
-  app.use('/api/orders', orderRoute);
+  app.use('/api/orders', orderRouter);
   app.get('/api/config/paypal', (req, res) => {
     res.send(config.PAYPAL_CLIENT_ID);
   });
