@@ -59,6 +59,7 @@ function App() {
  {/*</section>PRODUCT BODY*/}
   <main className="main">
     <div className="content">
+      <Route path= "/profile" component={ProfileScreen}></Route>
       <Route path= "/signin"  component={SigninScreen}></Route>
       <Route path= "/products"  component={ProductsScreen}></Route>
       <Route path= "/register"  component={RegisterScreen}></Route>
