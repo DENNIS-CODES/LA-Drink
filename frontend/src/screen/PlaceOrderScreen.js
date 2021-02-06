@@ -27,20 +27,6 @@ export default function PlaceOrderScreen(props) {
   } else if (!payment.paymentMethod) {
     props.history.push("/payment");
   }
-  const itemsPrice = cartItems.reduce((a, c) => a + c.price * c.qty, 0);
-  const shippingPrice = itemsPrice > 100 ? 0 : 10;
-  const taxPrice = 0.15 * itemsPrice;
-  const totalPrice = itemsPrice + shippingPrice + taxPrice;
-
-  const dispatch = useDispatch();
-
-  const placeOrderHandler = () => {
-    // create an order
-    dispatch(createOrder({
-      orderItems: cartItems, shipping, payment, itemsPrice, shippingPrice,
-      taxPrice, totalPrice
-    }));
-  }
   useEffect(() => {
     if (success) {
       props.history.push("/order/" + order._id);
