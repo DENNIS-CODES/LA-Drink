@@ -49,10 +49,12 @@ export const isAuth = (req, res, next) => {
     const authorization = req.headers.authorization:
     if(authorization) {
         const token = authorization.slice(7, authorization.length); // Bearer xxxxx
-        jwt.verify(token, process.env.JWT_SECRET || 'somethingsecret', 
-        (err, decode) => {
+        jwt.verify(
+            token,
+            process.env.JWT_SECRET || 'somethingsecret',
+            (err, decode) => {
             if(err) {
-                req.status(401).send({ message: 'invalid Token'});
+                res.status(401).send({ message: 'invalid Token'});
             } else {
                 req.user = decode;
                 next();
@@ -60,7 +62,7 @@ export const isAuth = (req, res, next) => {
         }
       );
     } else {
-        req.status(401).send({ message: 'No Token'});
+        res.status(401).send({ message: 'No Token'});
 
     }
 };

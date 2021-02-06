@@ -11,8 +11,8 @@ orderRouter.post(
          if (req.body.orderItems.length === 0) {
              res.status(400).send({ message: 'cart is empty'});
          } else {
-             const Oder = new Order({
-                 orderItems: req.body.oderItems,
+             const order = new Order({
+                 orderItems: req.body.orderItems,
                  shippingAddress: req.body.shippingAddress,
                  paymentMethod: req.body.paymentMethod,
                  itemsPrice: req.body.itemsPrice,

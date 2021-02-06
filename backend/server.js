@@ -5,7 +5,7 @@ import bodyParser from 'body-parser';
 import config from './config';
 import userRoute from './routes/userRoute';
 import productRoute from './routes/productRoute';
-import orderRoute from './routes/orderRoute';
+import orderRouter from './routes/orderRouter';
 import uploadRoute from './routes/uploadRoute';
 
 const mongodbUrl = config.MONGODB_URL;

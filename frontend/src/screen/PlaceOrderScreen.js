@@ -3,12 +3,24 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import CheckoutSteps from '../components/CheckoutSteps';
 import { createOrder } from '../actions/orderActions';
-function PlaceOrderScreen(props) {
+import CheckoutSteps from '../components/CheckoutSteps';
+export default function PlaceOrderScreen(props) {
 
   const cart = useSelector(state => state.cart);
-  const orderCreate = useSelector(state => state.orderCreate);
-  const { loading, success, error, order } = orderCreate;
-
+  if (!cart.paymentMethod) {
+    props.hitory.push('./payment');
+  }
+  const toPrice = (num) => Number(num.toFixed(2)); //5.123 => "5.12" => 5.12
+  cart.itemsPrice = toPrice(
+    cart.cartItem.reduce((a, c) => a + c.qty * c.price, 0)
+  );
+  cart.shippingPrice = cart.itemsPrice > 100 ? toPrice(0) : toPrice(10);
+  cart.taxPrice = toPrice(0.15 * cart.itemsPrice);
+  cart.totalPrice = cart.itemsPrice + cart.shippingPrice + cart.taxPrice;
+  const dispatch = useDispatch();
+  const placeOrderHandler = () => {
+    dispatch(createOrder({ ...cart, orderItems: cart.cartItems }));
+  };
   const { cartItems, shipping, payment } = cart;
   if (!shipping.address) {
     props.history.push("/shipping");
