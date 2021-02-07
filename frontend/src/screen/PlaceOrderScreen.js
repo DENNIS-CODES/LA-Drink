@@ -46,5 +46,6 @@ if(!cart.paymentMethod) {
          </li>
        <div className="col-1"></div> 
       </div>
+      </div>
       );
       }
