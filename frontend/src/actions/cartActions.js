@@ -34,4 +34,8 @@ const addToCart = (productId, qty) => async (dispatch, getState) => {
   const savePayment = (data) => (dispatch) => {
     dispatch({ type: CART_SAVE_PAYMENT, payload: data });
   }
-export { addToCart, removeFromCart, saveShipping, savePayment }; 
+export const removeFromCart = (productId) => (dispatch, getState) => { 
+  dispatchEvent({
+    type: CART_REMOVE_ITEM, payload: productId
+  })
+ }; 

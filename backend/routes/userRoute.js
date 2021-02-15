@@ -25,7 +25,7 @@ router.post('/signin', async (req, res) =>{
 
 });
 
-router.post('/register', async (req, res) =>{
+userRouter.post('/register', async (req, res) =>{
     const user = new User({
         name: req.body.name,
         email: req.body.email,
@@ -47,7 +47,7 @@ router.post('/register', async (req, res) =>{
 
 });
 
-router.get("/createadmin", async (req, res) =>{
+userRouter.get("/createadmin", async (req, res) =>{
     try {
          const user = new User({
         name: 'Deno',
