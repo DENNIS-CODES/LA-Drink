@@ -12,7 +12,7 @@ import logo from './logo.png';
 import ShippingScreen from './screen/ShippingScreen';
 import PaymentScreen from './screen/PaymentScreen';
 import PlaceOrderScreen from './screen/PlaceOrderScreen';
-
+import SellerScreen from './screens/SellerScreen';
 
 
 function App() {
@@ -59,6 +59,7 @@ function App() {
  {/*</section>PRODUCT BODY*/}
   <main className="main">
     <div className="content">
+    <Route path="/seller/:id" component={SellerScreen}></Route>
       <Route path= "/profile" component={ProfileScreen}></Route>
       <Route path= "/signin"  component={SigninScreen}></Route>
       <Route path= "/products"  component={ProductsScreen}></Route>

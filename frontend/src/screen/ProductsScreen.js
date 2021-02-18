@@ -1,247 +1,224 @@
 import React, { useEffect, useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
-import {
-  saveProduct,
-  listProducts,
-  deleteProdcut,
-} from '../actions/productActions';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+import { createReview, detailsProduct } from '../actions/productActions';
+import LoadingBox from '../components/LoadingBox';
+import MessageBox from '../components/MessageBox';
+import Rating from '../components/Rating';
+import { PRODUCT_REVIEW_CREATE_RESET } from '../constants/productConstants';
 
-function ProductsScreen(props) {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [id, setId] = useState('');
-  const [name, setName] = useState('');
-  const [price, setPrice] = useState('');
-  const [image, setImage] = useState('');
-  const [brand, setBrand] = useState('');
-  const [category, setCategory] = useState('');
-  const [countInStock, setCountInStock] = useState('');
-  const [description, setDescription] = useState('');
-  const [uploading, setUploading] = useState(false);
-  const productList = useSelector((state) => state.productList);
-  const { loading, products, error } = productList;
-
-  const productSave = useSelector((state) => state.productSave);
-  const {
-    loading: loadingSave,
-    success: successSave,
-    error: errorSave,
-  } = productSave;
-
-  const productDelete = useSelector((state) => state.productDelete);
-  const {
-    loading: loadingDelete,
-    success: successDelete,
-    error: errorDelete,
-  } = productDelete;
+export default function ProductScreen(props) {
   const dispatch = useDispatch();
+  const productId = props.match.params.id;
+  const [qty, setQty] = useState(1);
+  const productDetails = useSelector((state) => state.productDetails);
+  const { loading, error, product } = productDetails;
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+
+  const productReviewCreate = useSelector((state) => state.productReviewCreate);
+  const {
+    loading: loadingReviewCreate,
+    error: errorReviewCreate,
+    success: successReviewCreate,
+  } = productReviewCreate;
+
+  const [rating, setRating] = useState(0);
+  const [comment, setComment] = useState('');
 
   useEffect(() => {
-    if (successSave) {
-      setModalVisible(false);
+    if (successReviewCreate) {
+      window.alert('Review Submitted Successfully');
+      setRating('');
+      setComment('');
+      dispatch({ type: PRODUCT_REVIEW_CREATE_RESET });
     }
-    dispatch(listProducts());
-    return () => {
-      //
-    };
-  }, [successSave, successDelete]);
-
-  const openModal = (product) => {
-    setModalVisible(true);
-    setId(product._id);
-    setName(product.name);
-    setPrice(product.price);
-    setDescription(product.description);
-    setImage(product.image);
-    setBrand(product.brand);
-    setCategory(product.category);
-    setCountInStock(product.countInStock);
+    dispatch(detailsProduct(productId));
+  }, [dispatch, productId, successReviewCreate]);
+  const addToCartHandler = () => {
+    props.history.push(`/cart/${productId}?qty=${qty}`);
   };
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(
-      saveProduct({
-        _id: id,
-        name,
-        price,
-        image,
-        brand,
-        category,
-        countInStock,
-        description,
-      })
-    );
-  };
-  const deleteHandler = (product) => {
-    dispatch(deleteProdcut(product._id));
-  };
-  const uploadFileHandler = (e) => {
-    const file = e.target.files[0];
-    const bodyFormData = new FormData();
-    bodyFormData.append('image', file);
-    setUploading(true);
-    axios
-      .post('/api/uploads', bodyFormData, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      })
-      .then((response) => {
-        setImage(response.data);
-        setUploading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setUploading(false);
-      });
+    if (comment && rating) {
+      dispatch(
+        createReview(productId, { rating, comment, name: userInfo.name })
+      );
+    } else {
+      alert('Please enter comment and rating');
+    }
   };
   return (
-    <div className="content content-margined">
-      <div className="product-header">
-        <h3>Products</h3>
-        <button className="button primary" onClick={() => openModal({})}>
-          Create Product
-        </button>
-      </div>
-      {modalVisible && (
-        <div className="form">
-          <form onSubmit={submitHandler}>
-            <ul className="form-container">
+    <div>
+      {loading ? (
+        <LoadingBox></LoadingBox>
+      ) : error ? (
+        <MessageBox variant="danger">{error}</MessageBox>
+      ) : (
+        <div>
+          <Link to="/">Back to result</Link>
+          <div className="row top">
+            <div className="col-2">
+              <img
+                className="large"
+                src={product.image}
+                alt={product.name}
+              ></img>
+            </div>
+            <div className="col-1">
+              <ul>
+                <li>
+                  <h1>{product.name}</h1>
+                </li>
+                <li>
+                  <Rating
+                    rating={product.rating}
+                    numReviews={product.numReviews}
+                  ></Rating>
+                </li>
+                <li>Pirce : ${product.price}</li>
+                <li>
+                  Description:
+                  <p>{product.description}</p>
+                </li>
+              </ul>
+            </div>
+            <div className="col-1">
+              <div className="card card-body">
+                <ul>
+                  <li>
+                    Seller{' '}
+                    <h2>
+                      <Link to={`/seller/${product.seller._id}`}>
+                        {product.seller.seller.name}
+                      </Link>
+                    </h2>
+                    <Rating
+                      rating={product.seller.seller.rating}
+                      numReviews={product.seller.seller.numReviews}
+                    ></Rating>
+                  </li>
+                  <li>
+                    <div className="row">
+                      <div>Price</div>
+                      <div className="price">${product.price}</div>
+                    </div>
+                  </li>
+                  <li>
+                    <div className="row">
+                      <div>Status</div>
+                      <div>
+                        {product.countInStock > 0 ? (
+                          <span className="success">In Stock</span>
+                        ) : (
+                          <span className="danger">Unavailable</span>
+                        )}
+                      </div>
+                    </div>
+                  </li>
+                  {product.countInStock > 0 && (
+                    <>
+                      <li>
+                        <div className="row">
+                          <div>Qty</div>
+                          <div>
+                            <select
+                              value={qty}
+                              onChange={(e) => setQty(e.target.value)}
+                            >
+                              {[...Array(product.countInStock).keys()].map(
+                                (x) => (
+                                  <option key={x + 1} value={x + 1}>
+                                    {x + 1}
+                                  </option>
+                                )
+                              )}
+                            </select>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <button
+                          onClick={addToCartHandler}
+                          className="primary block"
+                        >
+                          Add to Cart
+                        </button>
+                      </li>
+                    </>
+                  )}
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 id="reviews">Reviews</h2>
+            {product.reviews.length === 0 && (
+              <MessageBox>There is no review</MessageBox>
+            )}
+            <ul>
+              {product.reviews.map((review) => (
+                <li key={review._id}>
+                  <strong>{review.name}</strong>
+                  <Rating rating={review.rating} caption=" "></Rating>
+                  <p>{review.createdAt.substring(0, 10)}</p>
+                  <p>{review.comment}</p>
+                </li>
+              ))}
               <li>
-                <h2>Create Product</h2>
-              </li>
-              <li>
-                {loadingSave && <div>Loading...</div>}
-                {errorSave && <div>{errorSave}</div>}
-              </li>
-
-              <li>
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  value={name}
-                  id="name"
-                  onChange={(e) => setName(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label htmlFor="price">Price</label>
-                <input
-                  type="text"
-                  name="price"
-                  value={price}
-                  id="price"
-                  onChange={(e) => setPrice(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label htmlFor="image">Image</label>
-                <input
-                  type="text"
-                  name="image"
-                  value={image}
-                  id="image"
-                  onChange={(e) => setImage(e.target.value)}
-                ></input>
-                <input type="file" onChange={uploadFileHandler}></input>
-                {uploading && <div>Uploading...</div>}
-              </li>
-              <li>
-                <label htmlFor="brand">Brand</label>
-                <input
-                  type="text"
-                  name="brand"
-                  value={brand}
-                  id="brand"
-                  onChange={(e) => setBrand(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label htmlFor="countInStock">CountInStock</label>
-                <input
-                  type="text"
-                  name="countInStock"
-                  value={countInStock}
-                  id="countInStock"
-                  onChange={(e) => setCountInStock(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label htmlFor="name">Category</label>
-                <input
-                  type="text"
-                  name="category"
-                  value={category}
-                  id="category"
-                  onChange={(e) => setCategory(e.target.value)}
-                ></input>
-              </li>
-              <li>
-                <label htmlFor="description">Description</label>
-                <textarea
-                  name="description"
-                  value={description}
-                  id="description"
-                  onChange={(e) => setDescription(e.target.value)}
-                ></textarea>
-              </li>
-              <li>
-                <button type="submit" className="button primary">
-                  {id ? 'Update' : 'Create'}
-                </button>
-              </li>
-              <li>
-                <button
-                  type="button"
-                  onClick={() => setModalVisible(false)}
-                  className="button secondary"
-                >
-                  Back
-                </button>
+                {userInfo ? (
+                  <form className="form" onSubmit={submitHandler}>
+                    <div>
+                      <h2>Write a customer review</h2>
+                    </div>
+                    <div>
+                      <label htmlFor="rating">Rating</label>
+                      <select
+                        id="rating"
+                        value={rating}
+                        onChange={(e) => setRating(e.target.value)}
+                      >
+                        <option value="">Select...</option>
+                        <option value="1">1- Poor</option>
+                        <option value="2">2- Fair</option>
+                        <option value="3">3- Good</option>
+                        <option value="4">4- Very good</option>
+                        <option value="5">5- Excelent</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label htmlFor="comment">Comment</label>
+                      <textarea
+                        id="comment"
+                        value={comment}
+                        onChange={(e) => setComment(e.target.value)}
+                      ></textarea>
+                    </div>
+                    <div>
+                      <label />
+                      <button className="primary" type="submit">
+                        Submit
+                      </button>
+                    </div>
+                    <div>
+                      {loadingReviewCreate && <LoadingBox></LoadingBox>}
+                      {errorReviewCreate && (
+                        <MessageBox variant="danger">
+                          {errorReviewCreate}
+                        </MessageBox>
+                      )}
+                    </div>
+                  </form>
+                ) : (
+                  <MessageBox>
+                    Please <Link to="/signin">Sign In</Link> to write a review
+                  </MessageBox>
+                )}
               </li>
             </ul>
-          </form>
+          </div>
         </div>
       )}
-
-      <div className="product-list">
-        <table className="table">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>Price</th>
-              <th>Category</th>
-              <th>Brand</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {products.map((product) => (
-              <tr key={product._id}>
-                <td>{product._id}</td>
-                <td>{product.name}</td>
-                <td>{product.price}</td>
-                <td>{product.category}</td>
-                <td>{product.brand}</td>
-                <td>
-                  <button className="button" onClick={() => openModal(product)}>
-                    Edit
-                  </button>{' '}
-                  <button
-                    className="button"
-                    onClick={() => deleteHandler(product)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
     </div>
   );
 }
-export default ProductsScreen;

@@ -432,3 +432,15 @@ th{
 .placeorder-info > div:first-child {
   margin-top: 0;
 }
+
+.row.start {
+  justify-content: flex-start;
+}
+
+.col-3 {
+  flex: 32 1 75rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
