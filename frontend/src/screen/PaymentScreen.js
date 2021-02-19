@@ -1,50 +1,62 @@
-import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { savePayment } from '../actions/cartActions';
-import CheckoutSteps from '../components/CheckoutSteps'
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { savePaymentMethod } from '../actions/cartActions';
+import CheckoutSteps from '../components/CheckoutSteps';
 
-function PaymentScreen(props) {
-  const [paymentMethod, setPaymentMethod] = useState('');
-
+export default function PaymentMethodScreen(props) {
+  const cart = useSelector((state) => state.cart);
+  const { shippingAddress } = cart;
+  if (!shippingAddress.address) {
+    props.history.push('/shipping');
+  }
+  const [paymentMethod, setPaymentMethod] = useState('PayPal');
   const dispatch = useDispatch();
-
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(savePayment({ paymentMethod }));
-    props.history.push('placeorder');
+    dispatch(savePaymentMethod(paymentMethod));
+    props.history.push('/placeorder');
   };
-    
-    
-    return <div>
-    <CheckoutSteps step1 step2 step3></CheckoutSteps>
-    <div className="form">
-      <form onSubmit={submitHandler} >
-        <ul className="form-container">
-          <li>
-            <h2>Payment</h2>
-                    </li>
-                    <li>
-                    <div>
-                      <input type="radio" name="paymentMethod" id="paymentMethod" onChange={(e) => setPaymentMethod(e.target.value)}>
-                        </input>
-                        <label for="paymentMethod">Paypal</label>
-                        </div>
-                        </li>
-                        <li>
-                    <div>
-                      <input type="radio" name="paymentMethod" id="paymentMethod" onChange={(e) => setPaymentMethod(e.target.value)}>
-                        </input>
-                        <label for="paymentMethod">Mpesa</label>
-                        </div>
-                        </li>
-                <li>
-                    <button type="submit" className="button-primary">Continue</button>
-                </li>
-            </ul>
-        </form>
+  return (
+    <div>
+      <CheckoutSteps step1 step2 step3></CheckoutSteps>
+      <form className="form" onSubmit={submitHandler}>
+        <div>
+          <h1>Payment Method</h1>
+        </div>
+        <div>
+          <div>
+            <input
+              type="radio"
+              id="paypal"
+              value="PayPal"
+              name="paymentMethod"
+              required
+              checked
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            ></input>
+            <label htmlFor="paypal">PayPal</label>
+          </div>
+        </div>
+        <div>
+          <div>
+            <input
+              type="radio"
+              id="stripe"
+              value="Stripe"
+              name="paymentMethod"
+              required
+              onChange={(e) => setPaymentMethod(e.target.value)}
+            ></input>
+            <label htmlFor="stripe">Stripe</label>
+          </div>
+        </div>
+        <div>
+          <label />
+          <button className="primary" type="submit">
+            Continue
+          </button>
+        </div>
+      </form>
     </div>
-    </div>
-
+  );
 }
-export default PaymentScreen;
