@@ -1,68 +1,59 @@
 import jwt from 'jsonwebtoken';
-import config from './config';
-const getToken = (user) => {
-    return jwt.sign({
-        _id: user._id,
-        name: user.name,
-        email: user.email,
-        isAdmin: user.isAdmin,
+
+export const generateToken = (user) => {
+  return jwt.sign(
+    {
+      _id: user._id,
+      name: user.name,
+      email: user.email,
+      isAdmin: user.isAdmin,
+      isSeller: user.isSeller,
     },
-        config.JWT_SECRET, {
-        expiresIn: '48h',
+    process.env.JWT_SECRET || 'somethingsecret',
+    {
+      expiresIn: '30d',
     }
-    );
-};
-
-const isAuth = (req, res, next) => {
-    const token = req.headers.authorization;
-
-    if (token) {
-        const onlyToken = token.slice(7, token.length);
-        jwt.verify(onlyToken, config.JWT_SECRET, (err, decode) => {
-            if (err) {
-                return res.status(401).send({
-                    message: 'Invalid Token'
-                });
-            }
-            req.user = decode;
-            next();
-            return;
-        });
-    } else {
-        return res.status(401).send({
-            message: 'Token is not supplied.'
-        });
-    }
-};
-
-const isAdmin = (req, res, next) => {
-    console.log(req.user);
-    if (req.user && req.user.isAdmin) {
-        return next();
-    }
-    return res.status(401).send({
-        message: 'Admin Token is not valid.'
-    });
+  );
 };
 
 export const isAuth = (req, res, next) => {
-    const authorization = req.headers.authorization:
-    if(authorization) {
-        const token = authorization.slice(7, authorization.length); // Bearer xxxxx
-        jwt.verify(
-            token,
-            process.env.JWT_SECRET || 'somethingsecret',
-            (err, decode) => {
-            if(err) {
-                res.status(401).send({ message: 'invalid Token'});
-            } else {
-                req.user = decode;
-                next();
-            }
+  const authorization = req.headers.authorization;
+  if (authorization) {
+    const token = authorization.slice(7, authorization.length); // Bearer XXXXXX
+    jwt.verify(
+      token,
+      process.env.JWT_SECRET || 'somethingsecret',
+      (err, decode) => {
+        if (err) {
+          res.status(401).send({ message: 'Invalid Token' });
+        } else {
+          req.user = decode;
+          next();
         }
-      );
-    } else {
-        res.status(401).send({ message: 'No Token'});
-
-    }
+      }
+    );
+  } else {
+    res.status(401).send({ message: 'No Token' });
+  }
+};
+export const isAdmin = (req, res, next) => {
+  if (req.user && req.user.isAdmin) {
+    next();
+  } else {
+    res.status(401).send({ message: 'Invalid Admin Token' });
+  }
+};
+export const isSeller = (req, res, next) => {
+  if (req.user && req.user.isSeller) {
+    next();
+  } else {
+    res.status(401).send({ message: 'Invalid Seller Token' });
+  }
+};
+export const isSellerOrAdmin = (req, res, next) => {
+  if (req.user && (req.user.isSeller || req.user.isAdmin)) {
+    next();
+  } else {
+    res.status(401).send({ message: 'Invalid Admin/Seller Token' });
+  }
 };

@@ -16,6 +16,7 @@ import SellerScreen from './screens/SellerScreen';
 import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
 import MapScreen from './screen/MapScreen';
+import SellerRoute from './components/SellerRoute';
 
 function App() {
   const userSignin = useSelector((state) =>state.userSignin);
@@ -32,6 +33,21 @@ function App() {
           userInfo ? <Link to="profile">{userInfo.name}</Link>:
          <Link to="/signin">Sign in</Link> 
         }
+           {userInfo && userInfo.isSeller && (
+              <div className="dropdown">
+                <Link to="#admin">
+                  Seller <i className="fa fa-caret-down"></i>
+                </Link>
+                <ul className="dropdown-content">
+                  <li>
+                    <Link to="/productlist/seller">Products</Link>
+                  </li>
+                  <li>
+                    <Link to="/orderlist/seller">Orders</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
         
         
   <ul className="main-nav-links">
