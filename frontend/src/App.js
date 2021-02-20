@@ -9,7 +9,7 @@ import CartScreen from './screen/CartScreen';
 import RegisterScreen from './screen/RegisterScreen';
 import ProductsScreen from './screen/ProductsScreen';
 import logo from './logo.png';
-import ShippingScreen from './screen/ShippingScreen';
+import ShippingAddressScreen from './screen/ShippingAddressScreen';
 import PaymentScreen from './screen/PaymentScreen';
 import PlaceOrderScreen from './screen/PlaceOrderScreen';
 import SellerScreen from './screens/SellerScreen';
@@ -66,7 +66,7 @@ function App() {
       <Route path= "/signin"  component={SigninScreen}></Route>
       <Route path= "/products"  component={ProductsScreen}></Route>
       <Route path= "/register"  component={RegisterScreen}></Route>
-      <Route path="/shipping" components={ShippingScreen}></Route>
+      <Route path="/shipping" components={ShippingAddressScreen}></Route>
       <Route path="/payment" components={PaymentScreen}></Route>
       <Route path="/placeorder" components={PlaceOrderScreen}></Route>
       <Route path="/products/:_id" component={ProductScreen}></Route>
