@@ -15,6 +15,7 @@ import PlaceOrderScreen from './screen/PlaceOrderScreen';
 import SellerScreen from './screens/SellerScreen';
 import AdminRoute from './components/AdminRoute';
 import PrivateRoute from './components/PrivateRoute';
+import MapScreen from './screen/MapScreen';
 
 function App() {
   const userSignin = useSelector((state) =>state.userSignin);

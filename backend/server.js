@@ -31,6 +31,9 @@ mongoose
   app.get('*', (req, res) => {
     res.sendFile(path.join(`${__dirname}/../frontend/build/index.html`));
   });
+  app.get('/api/config/google', (req, res) => {
+    res.send(process.env.GOOGLE_API_KEY || '');
+  });
 
   app.listen(config.PORT, () => {
     console.log('Server started at http://localhost:5000');
