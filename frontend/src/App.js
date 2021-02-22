@@ -10,7 +10,7 @@ import RegisterScreen from './screen/RegisterScreen';
 import ProductsScreen from './screen/ProductsScreen';
 import logo from './logo.png';
 import ShippingAddressScreen from './screen/ShippingAddressScreen';
-import PaymentScreen from './screen/PaymentScreen';
+import PaymentScreen from './screen/PaymentMethodScreen';
 import PlaceOrderScreen from './screen/PlaceOrderScreen';
 import SellerScreen from './screens/SellerScreen';
 import AdminRoute from './components/AdminRoute';
