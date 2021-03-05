@@ -1,123 +1,149 @@
 import {
-    ORDER_CREATE_FAIL,
-    ORDER_CREATE_REQUEST,
-    ORDER_CREATE_RESET,
-    ORDER_CREATE_SUCCESS,
-    ORDER_DETAILS_FAIL,
-    ORDER_DETAILS_REQUEST,
-    ORDER_DETAILS_SUCCESS,
-    ORDER_MINE_LIST_FAIL,
-    ORDER_MINE_LIST_REQUEST,
-    ORDER_MINE_LIST_SUCCESS,
-    ORDER_PAY_FAIL,
-    ORDER_PAY_REQUEST,
-    ORDER_PAY_RESET,
-    ORDER_PAY_SUCCESS,
-    ORDER_LIST_REQUEST,
-    ORDER_LIST_SUCCESS,
-    ORDER_LIST_FAIL,
-    ORDER_DELETE_REQUEST,
-    ORDER_DELETE_SUCCESS,
-    ORDER_DELETE_FAIL,
-    ORDER_DELETE_RESET,
-    ORDER_DELIVER_REQUEST,
-    ORDER_DELIVER_SUCCESS,
-    ORDER_DELIVER_FAIL,
-    ORDER_DELIVER_RESET,
-  } from '../constants/orderConstants';
-  
-  export const orderCreateReducer = (state = {}, action) => {
-    switch (action.type) {
-      case ORDER_CREATE_REQUEST:
-        return { loading: true };
-      case ORDER_CREATE_SUCCESS:
-        return { loading: false, success: true, order: action.payload };
-      case ORDER_CREATE_FAIL:
-        return { loading: false, error: action.payload };
-      case ORDER_CREATE_RESET:
-        return {};
-      default:
-        return state;
-    }
-  };
-  
-  export const orderDetailsReducer = (state = { loading: true }, action) => {
-    switch (action.type) {
-      case ORDER_DETAILS_REQUEST:
-        return { loading: true };
-      case ORDER_DETAILS_SUCCESS:
-        return { loading: false, order: action.payload };
-      case ORDER_DETAILS_FAIL:
-        return { loading: false, error: action.payload };
-      default:
-        return state;
-    }
-  };
-  
-  export const orderPayReducer = (state = {}, action) => {
-    switch (action.type) {
-      case ORDER_PAY_REQUEST:
-        return { loading: true };
-      case ORDER_PAY_SUCCESS:
-        return { loading: false, success: true };
-      case ORDER_PAY_FAIL:
-        return { loading: false, error: action.payload };
-      case ORDER_PAY_RESET:
-        return {};
-      default:
-        return state;
-    }
-  };
-  export const orderMineListReducer = (state = { orders: [] }, action) => {
-    switch (action.type) {
-      case ORDER_MINE_LIST_REQUEST:
-        return { loading: true };
-      case ORDER_MINE_LIST_SUCCESS:
-        return { loading: false, orders: action.payload };
-      case ORDER_MINE_LIST_FAIL:
-        return { loading: false, error: action.payload };
-      default:
-        return state;
-    }
-  };
-  export const orderListReducer = (state = { orders: [] }, action) => {
-    switch (action.type) {
-      case ORDER_LIST_REQUEST:
-        return { loading: true };
-      case ORDER_LIST_SUCCESS:
-        return { loading: false, orders: action.payload };
-      case ORDER_LIST_FAIL:
-        return { loading: false, error: action.payload };
-      default:
-        return state;
-    }
-  };
-  export const orderDeleteReducer = (state = {}, action) => {
-    switch (action.type) {
-      case ORDER_DELETE_REQUEST:
-        return { loading: true };
-      case ORDER_DELETE_SUCCESS:
-        return { loading: false, success: true };
-      case ORDER_DELETE_FAIL:
-        return { loading: false, error: action.payload };
-      case ORDER_DELETE_RESET:
-        return {};
-      default:
-        return state;
-    }
-  };
-  
-  export const orderDeliverReducer = (state = {}, action) => {
-    switch (action.type) {
-      case ORDER_DELIVER_REQUEST:
-        return { loading: true };
-      case ORDER_DELIVER_SUCCESS:
-        return { loading: false, success: true };
-      case ORDER_DELIVER_FAIL:
-        return { loading: false, error: action.payload };
-      case ORDER_DELIVER_RESET:
-        return {};
-      default:
-        return state;
-    }
-  };
+  USER_ADDRESS_MAP_CONFIRM,
+  USER_DELETE_FAIL,
+  USER_DELETE_REQUEST,
+  USER_DELETE_RESET,
+  USER_DELETE_SUCCESS,
+  USER_DETAILS_FAIL,
+  USER_DETAILS_REQUEST,
+  USER_DETAILS_RESET,
+  USER_DETAILS_SUCCESS,
+  USER_LIST_FAIL,
+  USER_LIST_REQUEST,
+  USER_LIST_SUCCESS,
+  USER_REGISTER_FAIL,
+  USER_REGISTER_REQUEST,
+  USER_REGISTER_SUCCESS,
+  USER_SIGNIN_FAIL,
+  USER_SIGNIN_REQUEST,
+  USER_SIGNIN_SUCCESS,
+  USER_SIGNOUT,
+  USER_TOPSELLERS_LIST_FAIL,
+  USER_TOPSELLERS_LIST_REQUEST,
+  USER_TOPSELLERS_LIST_SUCCESS,
+  USER_UPDATE_FAIL,
+  USER_UPDATE_PROFILE_FAIL,
+  USER_UPDATE_PROFILE_REQUEST,
+  USER_UPDATE_PROFILE_RESET,
+  USER_UPDATE_PROFILE_SUCCESS,
+  USER_UPDATE_REQUEST,
+  USER_UPDATE_RESET,
+  USER_UPDATE_SUCCESS,
+} from '../constants/userConstants';
+
+export const userRegisterReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_REGISTER_REQUEST:
+      return { loading: true };
+    case USER_REGISTER_SUCCESS:
+      return { loading: false, userInfo: action.payload };
+    case USER_REGISTER_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const userSigninReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_SIGNIN_REQUEST:
+      return { loading: true };
+    case USER_SIGNIN_SUCCESS:
+      return { loading: false, userInfo: action.payload };
+    case USER_SIGNIN_FAIL:
+      return { loading: false, error: action.payload };
+    case USER_SIGNOUT:
+      return {};
+    default:
+      return state;
+  }
+};
+export const userDetailsReducer = (state = { loading: true }, action) => {
+  switch (action.type) {
+    case USER_DETAILS_REQUEST:
+      return { loading: true };
+    case USER_DETAILS_SUCCESS:
+      return { loading: false, user: action.payload };
+    case USER_DETAILS_FAIL:
+      return { loading: false, error: action.payload };
+    case USER_DETAILS_RESET:
+      return { loading: true };
+    default:
+      return state;
+  }
+};
+export const userUpdateProfileReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_UPDATE_PROFILE_REQUEST:
+      return { loading: true };
+    case USER_UPDATE_PROFILE_SUCCESS:
+      return { loading: false, success: true };
+    case USER_UPDATE_PROFILE_FAIL:
+      return { loading: false, error: action.payload };
+    case USER_UPDATE_PROFILE_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+export const userUpdateReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_UPDATE_REQUEST:
+      return { loading: true };
+    case USER_UPDATE_SUCCESS:
+      return { loading: false, success: true };
+    case USER_UPDATE_FAIL:
+      return { loading: false, error: action.payload };
+    case USER_UPDATE_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+export const userListReducer = (state = { loading: true }, action) => {
+  switch (action.type) {
+    case USER_LIST_REQUEST:
+      return { loading: true };
+    case USER_LIST_SUCCESS:
+      return { loading: false, users: action.payload };
+    case USER_LIST_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+export const userDeleteReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_DELETE_REQUEST:
+      return { loading: true };
+    case USER_DELETE_SUCCESS:
+      return { loading: false, success: true };
+    case USER_DELETE_FAIL:
+      return { loading: false, error: action.payload };
+    case USER_DELETE_RESET:
+      return {};
+    default:
+      return state;
+  }
+};
+export const userTopSellerListReducer = (state = { loading: true }, action) => {
+  switch (action.type) {
+    case USER_TOPSELLERS_LIST_REQUEST:
+      return { loading: true };
+    case USER_TOPSELLERS_LIST_SUCCESS:
+      return { loading: false, users: action.payload };
+    case USER_TOPSELLERS_LIST_FAIL:
+      return { loading: false, error: action.payload };
+    default:
+      return state;
+  }
+};
+
+export const userAddressMapReducer = (state = {}, action) => {
+  switch (action.type) {
+    case USER_ADDRESS_MAP_CONFIRM:
+      return { address: action.payload };
+    default:
+      return state;
+  }
+};
