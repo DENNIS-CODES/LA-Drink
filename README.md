@@ -2,5 +2,5 @@
 
 An Ecommerce Website created using React
 
-## LIVE PREVIEW
+## SKETCH PREVIEW
 [Click Here](https://LA-Drink-2.denniscodes.repl.co)
